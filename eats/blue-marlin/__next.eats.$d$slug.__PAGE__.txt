@@ -1,0 +1,37 @@
+1:"$Sreact.fragment"
+2:"/davenport-table/_next/static/chunks/1jw-uwi6s1hl0.js"
+3:"/davenport-table/_next/static/chunks/018r4tr2r1ytd.js"
+4:"/davenport-table/_next/static/chunks/27pcmsp22i7l0.js"
+5:"/davenport-table/_next/static/chunks/19777awsph1pn.js"
+6:I[79520,["$2","$3","$4","$5"],""]
+7:I[48303,["$2","$3","$4","$5"],"SiteHeader"]
+8:I[39756,["$2","$3","$4","$5"],"default"]
+9:I[37457,["$2","$3","$4","$5"],"default"]
+a:I[22016,["$2","$3","$4","$5"],""]
+16:"ViewportBoundary"
+17:I[97367,["$2","$3","$4","$5"],"$16"]
+18:"MetadataBoundary"
+19:I[97367,["$2","$3","$4","$5"],"$18"]
+1a:"$Sreact.suspense"
+1b:I[27201,["$2","$3","$4","$5"],"IconMark"]
+:HL["/davenport-table/_next/static/chunks/165g0vgxc14yt.css","style"]
+c:X
+f:X
+f:C
+12:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"wrap section stack","children":[["$","p",null,{"className":"kicker","children":["$","$La",null,{"href":"/eats","children":"Nearby tables"}]}],["$","h1",null,{"children":"Blue Marlin Grille, Windsor Island"}],["$","p",null,{"className":"lede","children":"A resort grill at Windsor Island for a meal without leaving the property. It is a convenience, not the plan for a late night."}],["$","p",null,{"children":"1115 Aloha Blvd, Davenport, FL 33897"}],["$","p",null,{"children":[[["$","a",null,{"href":"tel:8634385950","children":"(863) 438-5950"}]," · "],["$","a",null,{"href":"https://order.toasttab.com/online/blue-marlin-grille","rel":"noopener noreferrer","children":"Toast order page"}]," · ",["$","a",null,{"href":"https://order.toasttab.com/online/blue-marlin-grille","rel":"noopener noreferrer","children":"Menu on their site"}],null]}],["$","section",null,{"className":"sheet","aria-labelledby":"hours-title","children":[["$","h2",null,{"id":"hours-title","children":"Hours"}],["$","p",null,{"children":"Hours are not listed."}],["$","p",null,{"className":"hint","children":"Close times disagreed across secondary notes, so none are listed. January hours are not verified. The Toast page reads as an order link, not proof of a late dine-in service."}]]}],["$","section",null,{"aria-labelledby":"highlights-title","children":[["$","h2",null,{"id":"highlights-title","children":"Curated highlights"}],["$","p",null,{"className":"lede","children":"The phone is the one shown with the Toast listing. The Toast and resort pages blocked an automated check with HTTP 403, which is not a missing page. No first-party dish photo was found. No drive time is given."}],["$","ul",null,{"className":"facts","children":[["$","li","Four Corners Sampler",{"children":[["$","h3",null,{"children":"Four Corners Sampler"}],["$","p",null,{"children":"Named on the Toast listing."}]]}],["$","li","Windsor Wings",{"children":[["$","h3",null,{"children":"Windsor Wings"}],["$","p",null,{"children":"Named on the Toast listing."}]]}],["$","li","Double Patty Smash Burger",{"children":[["$","h3",null,{"children":"Double Patty Smash Burger"}],["$","p",null,{"children":"Named on the Toast listing."}]]}],["$","li","Aloha Burger",{"children":[["$","h3",null,{"children":"Aloha Burger"}],["$","p",null,{"children":"Named on the Toast listing."}]]}]]}]]}],"$L13"]}],null,"$L14"]}],"p":"$@15","v":null,"s":"$c"}}]]
+10:[["children",{"s":{"n":"slug","t":"d","k":"blue-marlin","s":[]},"h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}]}]]}],"p":"$@11","v":"$f","s":"$c"},"c":"$Q12"}]]
+d:[["children",{"s":"eats","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}]}]]}],"p":"$@e","v":"$f","s":"$c"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/davenport-table/_next/static/chunks/165g0vgxc14yt.css","precedence":"next"}],["$","script","script-0",{"src":"/davenport-table/_next/static/chunks/1jw-uwi6s1hl0.js","async":true}],["$","script","script-1",{"src":"/davenport-table/_next/static/chunks/018r4tr2r1ytd.js","async":true}],["$","script","script-2",{"src":"/davenport-table/_next/static/chunks/27pcmsp22i7l0.js","async":true}],["$","script","script-3",{"src":"/davenport-table/_next/static/chunks/19777awsph1pn.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L6",null,{"src":"/davenport-table/retreat-config.js","strategy":"beforeInteractive"}],["$","$L7",null,{}],["$","main",null,{"id":"content","children":["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}],"notFound":[["$","div",null,{"className":"wrap section","children":[["$","p",null,{"className":"kicker","children":"404"}],["$","h1",null,{"children":"That page is not on the board."}],["$","p",null,{"children":["$","$La",null,{"href":"/","children":"Back to the house"}]}]]}],[]]}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"wrap","children":[["$","p",null,{"children":"The Davenport Table keeps a shared roster, room claims, and a bring-list. The street address of the house is not published."}],["$","p",null,{"children":["House photographs are from the"," ",["$","a",null,{"href":"https://www.airbnb.com/rooms/1808417579546681827","rel":"noopener noreferrer","children":"public Airbnb listing"}],". Restaurant photographs are from those restaurants' own sites, checked November 6, 2026."]}]]}]}]]}]}]]}],"p":"$@b","v":null,"s":"$c"},"c":"$Qd"},"h":{"r":["$","$1","h",{"children":[null,["$","$L17",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L19",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1a",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Blue Marlin Grille, Windsor Island · The Davenport Table"}],["$","meta","1",{"name":"description","content":"Board-game retreat near Four Corners, January 14–18, 2027. Shared roster, room claims, and a bring-list. The street address is not published."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"rel":"icon","href":"/davenport-table/icon.svg?icon.0vn1y-zp0m22v.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1b","4",{}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$c"}},"a":"$@1d","u":"$@1e","b":"GDAX5DCsBEiIFptq__vwP"}
+1f:I[97367,["$2","$3","$4","$5"],"OutletBoundary"]
+13:["$","section",null,{"aria-labelledby":"food-photos","children":[["$","h2",null,{"id":"food-photos","children":"Pictures"}],["$","div",null,{"className":"photo-grid","children":[["$","div","/media/food/blue-marlin-grille-ai-illustration.jpg",{"className":"span-6","children":["$","figure",null,{"className":"food-photo","children":[["$","img",null,{"src":"/davenport-table/media/food/blue-marlin-grille-ai-illustration.jpg","alt":"Illustrated grill plate with a burger, wings, and a salad, not a photograph from Blue Marlin Grille.","loading":"lazy","fetchPriority":"auto","decoding":"async"}],["$","figcaption",null,{"children":"AI-generated food illustration—not a restaurant photo"}]]}]}]]}]]}]
+14:["$","$L1f",null,{"children":["$","$1a",null,{"name":"Next.MetadataOutlet","children":"$@20"}]}]
+c:300
+20:null
+1e:true
+c:C
+1d:0
+11:"$undefined"
+e:"$undefined"
+b:"$undefined"
+1c:"$undefined"
+15:"$undefined"

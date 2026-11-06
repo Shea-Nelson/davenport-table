@@ -1,6 +1,6 @@
-:HL["/davenport-table/_next/static/chunks/3b2maznkj2p_0.css","style"]
+:HL["/davenport-table/_next/static/chunks/165g0vgxc14yt.css","style"]
 :HC["/",""]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"four-corners-tavern","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"eats","h":96,"c":"$Q2"}]]
-0:{"b":"fa2Rd8IjUTPMxkrgxGARb","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"GDAX5DCsBEiIFptq__vwP","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
