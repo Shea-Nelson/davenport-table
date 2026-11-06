@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+2:"/davenport-table/_next/static/chunks/1jw-uwi6s1hl0.js"
+3:"/davenport-table/_next/static/chunks/018r4tr2r1ytd.js"
+4:"/davenport-table/_next/static/chunks/1iho9gilv-bjc.js"
+5:"/davenport-table/_next/static/chunks/19777awsph1pn.js"
+6:I[79520,["$2","$3","$4","$5"],""]
+7:I[48303,["$2","$3","$4","$5"],"SiteHeader"]
+8:I[39756,["$2","$3","$4","$5"],"default"]
+9:I[37457,["$2","$3","$4","$5"],"default"]
+a:I[22016,["$2","$3","$4","$5"],""]
+18:"ViewportBoundary"
+19:I[97367,["$2","$3","$4","$5"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$2","$3","$4","$5"],"$1a"]
+1c:"$Sreact.suspense"
+1d:I[27201,["$2","$3","$4","$5"],"IconMark"]
+:HL["/davenport-table/_next/static/chunks/306crqq5-h3t8.css","style"]
+c:X
+f:X
+f:C
+12:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"wrap section stack","children":[["$","p",null,{"className":"kicker","children":["$","$La",null,{"href":"/eats","children":"Nearby tables"}]}],["$","h1",null,{"children":"Palma Italian Kitchen"}],["$","p",null,{"className":"lede","children":"Italian plates and pizzas on Champions Gate Boulevard, with a groups page on their site."}],["$","p",null,{"children":"8266 Champions Gate Blvd, Champions Gate, FL 33896"}],["$","p",null,{"children":[["$","a",null,{"href":"tel:4074792098","children":"407-479-2098"}]," · ",["$","a",null,{"href":"https://palmaitalian.com/","rel":"noopener noreferrer","children":"Palma Italian Kitchen"}]," · ",["$","a",null,{"href":"https://palmaitalian.com/menu/","rel":"noopener noreferrer","children":"Menu on their site"}],null]}],["$","section",null,{"className":"sheet","aria-labelledby":"hours-title","children":[["$","h2",null,{"id":"hours-title","children":"Hours"}],["$","p",null,{"children":"Hours are not listed."}],["$","p",null,{"className":"hint","children":"The menu page listed more than one set of hours, including a September-only banner. No hours are shown."}]]}],["$","section",null,{"aria-labelledby":"highlights-title","children":[["$","h2",null,{"id":"highlights-title","children":"Curated highlights"}],["$","p",null,{"className":"lede","children":"Curated highlights, not the full menu. Prices are from the restaurant's menu page on November 6, 2026, not a promise for January. A newspaper feature image was the only picture on that page, and it is not used here. No dish photograph is in the verified set."}],["$","ul",null,{"className":"facts","children":[["$","li","Nonna's Meatballs",{"children":[["$","h3",null,{"children":"Nonna's Meatballs"}],["$","p",null,{"children":"$$17 on November 6, 2026. Veal, beef, and pork, marinara, whipped ricotta, focaccia."}]]}],["$","li","The Godfather Nachos",{"children":[["$","h3",null,{"children":"The Godfather Nachos"}],["$","p",null,{"children":"$$19. Fried pasta chips, Bolognese, Alfredo, pepperoncini, pistachio pesto crema, bruschetta."}]]}],["$","li","Hot Honey Pizza",{"children":[["$","h3",null,{"children":"Hot Honey Pizza"}],["$","p",null,{"children":"$$16. Mozzarella, ricotta, pepperoni, crispy prosciutto, red onion, hot honey."}]]}],["$","li","Bolognese",{"children":[["$","h3",null,{"children":"Bolognese"}],"$L13"]}],"$L14"]}]]}],"$L15"]}],null,"$L16"]}],"p":"$@17","v":null,"s":"$c"}}]]
+10:[["children",{"s":{"n":"slug","t":"d","k":"palma","s":[]},"h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}]}]]}],"p":"$@11","v":"$f","s":"$c"},"c":"$Q12"}]]
+d:[["children",{"s":"eats","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}]}]]}],"p":"$@e","v":"$f","s":"$c"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/davenport-table/_next/static/chunks/306crqq5-h3t8.css","precedence":"next"}],["$","script","script-0",{"src":"/davenport-table/_next/static/chunks/1jw-uwi6s1hl0.js","async":true}],["$","script","script-1",{"src":"/davenport-table/_next/static/chunks/018r4tr2r1ytd.js","async":true}],["$","script","script-2",{"src":"/davenport-table/_next/static/chunks/1iho9gilv-bjc.js","async":true}],["$","script","script-3",{"src":"/davenport-table/_next/static/chunks/19777awsph1pn.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L6",null,{"src":"/davenport-table/retreat-config.js","strategy":"beforeInteractive"}],["$","$L7",null,{}],["$","main",null,{"id":"content","children":["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}],"notFound":[["$","div",null,{"className":"wrap section","children":[["$","p",null,{"className":"kicker","children":"404"}],["$","h1",null,{"children":"That page is not on the board."}],["$","p",null,{"children":["$","$La",null,{"href":"/","children":"Back to the house"}]}]]}],[]]}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"wrap","children":[["$","p",null,{"children":"The Davenport Table keeps a shared roster, room claims, and a bring-list. The street address of the house is not published."}],["$","p",null,{"children":["House photographs are from the"," ",["$","a",null,{"href":"https://www.airbnb.com/rooms/1808417579546681827","rel":"noopener noreferrer","children":"public Airbnb listing"}],". Restaurant photographs are from those restaurants' own sites, checked November 6, 2026."]}]]}]}]]}]}]]}],"p":"$@b","v":null,"s":"$c"},"c":"$Qd"},"h":{"r":["$","$1","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1c",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Palma Italian Kitchen · The Davenport Table"}],["$","meta","1",{"name":"description","content":"Board-game retreat near Four Corners, January 14–18, 2027. Shared roster, room claims, and a bring-list. The street address is not published."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"rel":"icon","href":"/davenport-table/icon.svg?icon.0vn1y-zp0m22v.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1d","4",{}]]}]}],null]}],null]}],"p":"$@1e","v":null,"s":"$c"}},"a":"$@1f","u":"$@20","b":"v9dG-jyPkF3-GH6ng8y85"}
+21:I[97367,["$2","$3","$4","$5"],"OutletBoundary"]
+13:["$","p",null,{"children":"$$26. House Bolognese with pappardelle or gnocchi."}]
+14:["$","li","Lasagna Fritti",{"children":[["$","h3",null,{"children":"Lasagna Fritti"}],["$","p",null,{"children":"Fried nine-layer lasagna with marinara and mozzarella, plus a side salad. A price was not kept from the menu notes."}]]}]
+15:["$","p",null,{"className":"empty","children":"No dish photograph is on file. A newspaper feature from the menu page was not used as food."}]
+16:["$","$L21",null,{"children":["$","$1c",null,{"name":"Next.MetadataOutlet","children":"$@22"}]}]
+c:300
+22:null
+20:true
+c:C
+1f:0
+11:"$undefined"
+e:"$undefined"
+b:"$undefined"
+1e:"$undefined"
+17:"$undefined"

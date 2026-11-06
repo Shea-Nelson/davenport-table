@@ -1,0 +1,30 @@
+1:"$Sreact.fragment"
+2:"/davenport-table/_next/static/chunks/1jw-uwi6s1hl0.js"
+3:"/davenport-table/_next/static/chunks/018r4tr2r1ytd.js"
+4:"/davenport-table/_next/static/chunks/1iho9gilv-bjc.js"
+5:"/davenport-table/_next/static/chunks/19777awsph1pn.js"
+6:I[79520,["$2","$3","$4","$5"],""]
+7:I[48303,["$2","$3","$4","$5"],"SiteHeader"]
+8:I[39756,["$2","$3","$4","$5"],"default"]
+9:I[37457,["$2","$3","$4","$5"],"default"]
+a:I[22016,["$2","$3","$4","$5"],""]
+e:"/davenport-table/_next/static/chunks/20g9qms9xzq4k.js"
+f:I[25793,["$2","$3","$4","$5","$e"],"RoomsDesk"]
+10:I[97367,["$2","$3","$4","$5"],"OutletBoundary"]
+11:"$Sreact.suspense"
+13:"ViewportBoundary"
+14:I[97367,["$2","$3","$4","$5"],"$13"]
+16:"MetadataBoundary"
+17:I[97367,["$2","$3","$4","$5"],"$16"]
+19:I[68027,["$2","$3","$4","$5"],"default",1]
+:HL["/davenport-table/_next/static/chunks/306crqq5-h3t8.css","style"]
+:HC["/",""]
+c:X
+d:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"wrap section stack","children":[["$","p",null,{"className":"kicker","children":"Select your token"}],["$","h1",null,{"children":"Rooms"}],["$","p",null,{"className":"lede","children":"Ten bedrooms from the host description, with the listing photographs. A claim coordinates who sleeps where. It is not an Airbnb reservation, and it does not change the lodging split. A king is one claim. Two queens, two twins, or a bunk can be claimed separately or together. Beds are not people, and people are not prices."}],["$","p",null,{"children":"Eight full baths are on the listing. Bathroom photographs were not matched to specific bedrooms, so they are not shown as if we knew which was which. Shared baths are named from the host description."}],["$","$Lf",null,{}]]}],[["$","script","script-0",{"src":"/davenport-table/_next/static/chunks/20g9qms9xzq4k.js","async":true,"nonce":"$undefined"}]],["$","$L10",null,{"children":["$","$11",null,{"name":"Next.MetadataOutlet","children":"$@12"}]}]]}],"p":false,"v":null}}]]
+b:[["children",{"s":"rooms","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$c"},"c":"$Qd"}]]
+0:{"P":null,"c":["","rooms",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/davenport-table/_next/static/chunks/306crqq5-h3t8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/davenport-table/_next/static/chunks/1jw-uwi6s1hl0.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/davenport-table/_next/static/chunks/018r4tr2r1ytd.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/davenport-table/_next/static/chunks/1iho9gilv-bjc.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/davenport-table/_next/static/chunks/19777awsph1pn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L6",null,{"src":"/davenport-table/retreat-config.js","strategy":"beforeInteractive"}],["$","$L7",null,{}],["$","main",null,{"id":"content","children":["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"wrap section","children":[["$","p",null,{"className":"kicker","children":"404"}],["$","h1",null,{"children":"That page is not on the board."}],["$","p",null,{"children":["$","$La",null,{"href":"/","children":"Back to the house"}]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"site-footer","children":["$","div",null,{"className":"wrap","children":[["$","p",null,{"children":"The Davenport Table keeps a shared roster, room claims, and a bring-list. The street address of the house is not published."}],["$","p",null,{"children":["House photographs are from the"," ",["$","a",null,{"href":"https://www.airbnb.com/rooms/1808417579546681827","rel":"noopener noreferrer","children":"public Airbnb listing"}],". Restaurant photographs are from those restaurants' own sites, checked November 6, 2026."]}]]}]}]]}]}]]}],"p":false,"v":null},"c":"$Qb"},"h":{"r":["$","$1","h",{"children":[null,["$","$L14",null,{"children":"$L15"}],["$","$L17",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$11",null,{"name":"Next.Metadata","children":"$L18"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$19",[["$","link","0",{"rel":"stylesheet","href":"/davenport-table/_next/static/chunks/306crqq5-h3t8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"v9dG-jyPkF3-GH6ng8y85"}
+c:C
+15:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1a:I[27201,["$2","$3","$4","$5"],"IconMark"]
+12:null
+18:[["$","title","0",{"children":"Rooms · The Davenport Table"}],["$","meta","1",{"name":"description","content":"Board-game retreat near Four Corners, January 14–18, 2027. Shared roster, room claims, and a bring-list. The street address is not published."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"rel":"icon","href":"/davenport-table/icon.svg?icon.0vn1y-zp0m22v.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","4",{}]]
