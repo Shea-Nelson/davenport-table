@@ -1,6 +1,6 @@
-:HL["/davenport-table/_next/static/chunks/29emoityze29z.css","style"]
+:HL["/davenport-table/_next/static/chunks/3xg269vg7nepb.css","style"]
 :HC["/",""]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"little-greek","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"eats","h":96,"c":"$Q2"}]]
-0:{"b":"fk0eko9xGFkLmOz-GxagC","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"fseuGzPKUZRk3YocIyxDI","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
