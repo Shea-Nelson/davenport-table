@@ -117,10 +117,10 @@
         button.textContent = "Sign in on Peeps";
       } else if (mine) {
         button.textContent = "Withdraw";
-        button.addEventListener("click", function () { withdraw(button.dataset.requestId); });
+        button.addEventListener("click", function (event) { withdraw(event.currentTarget.dataset.requestId); });
       } else {
         button.textContent = "Request";
-        button.addEventListener("click", function () { ask(Number(button.dataset.bgg)); });
+        button.addEventListener("click", function (event) { ask(Number(event.currentTarget.dataset.bgg)); });
       }
       links.appendChild(document.createTextNode(" "));
       links.appendChild(button);
