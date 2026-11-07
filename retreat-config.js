@@ -26,14 +26,14 @@ window.RETREAT_BOARD = "ready";
   ];
   var extras = {
     "chick-fil-a": { href: "https://www.chick-fil-a.com/locations/fl/champions-crossing", name: "Chick-fil-A, Champions Crossing", text: "Fast chicken at 1201 Champions Drive. The location page lists Sunday as closed.", image: "/davenport-table/media/food/chick-fil-a-champions-crossing.jpg", alt: "Chick-fil-A restaurant exterior with the red logo on the building.", caption: "Photo of restaurant 05565 from Chick-fil-A's location images. That is the Champions Crossing page." },
-    "culvers": { href: "https://www.google.com/maps/dir/?api=1&destination=1107%20Posner%20Blvd%2C%20Davenport%2C%20FL%2033837", name: "Culver's, Posner Blvd", text: "Burgers and frozen custard at 1107 Posner Blvd. Directions, because a first-party branch URL was not found.", image: "/davenport-table/media/food/culvers-logo.svg", alt: "Culver's logo.", caption: "Official Culver's logo, not a photo of the Posner Boulevard restaurant." },
-    "five-guys": { href: "https://restaurants.fiveguys.com/fl/davenport", name: "Five Guys, Davenport", text: "Burgers and fries at 1321 Posner Blvd." },
-    "huey-magoos": { href: "https://order.hueymagoos.com/", name: "Huey Magoo's, ChampionsGate", text: "Chicken tenders at 8316 Champions Gate Blvd. The order page lists this branch. No hours are copied from the 2019 opening notice.", image: "/davenport-table/media/food/huey-magoos-logo.jpg", alt: "Huey Magoo's Chicken Tenders logo.", caption: "Official Huey Magoo's logo, not a photo of the ChampionsGate restaurant." },
-    "moes": { href: "https://locations.moes.com/fl/clermont/890-us-hwy-27", name: "Moe's Southwest Grill, Four Corners", text: "The nearest verified Moe's branch, at 890 US Hwy 27, Clermont. Burritos and bowls. This is not a Champions Gate storefront.", image: "/davenport-table/media/food/moes-logo.png", alt: "Moe's Southwest Grill logo.", caption: "Official logo from the Four Corners location page, not a photo of the restaurant." },
-    "outback": { href: "https://locations.outback.com/florida/davenport/996-heritage-pass", name: "Outback Steakhouse, Davenport", text: "Steaks at 996 Heritage Pass. The only Outback listed for Davenport." },
-    "longhorn": { href: "https://www.longhornsteakhouse.com/locations/fl/davenport/championsgate/5616", name: "LongHorn Steakhouse, ChampionsGate", text: "Steaks at 8095 Osceola Polk Line Rd, just east of I-4 exit 58." },
-    "carrabbas": { href: "https://locations.carrabbas.com/florida/davenport/1005-heritage-pass", name: "Carrabba's Italian Grill, Davenport", text: "Italian grill at 1005 Heritage Pass, next to the Davenport Outback." },
-    "texas-roadhouse": { href: "https://www.texasroadhouse.com/locations/champions-gate", name: "Texas Roadhouse, Champions Gate", text: "The Champions Gate store is at 1997 Aegean Way, Davenport, FL 33896. Census did not match that address, and the location page did not publish coordinates, so it is not given a mile ranking." }
+    "culvers": { href: "https://www.google.com/maps/dir/?api=1&destination=1107%20Posner%20Blvd%2C%20Davenport%2C%20FL%2033837", name: "Culver's, Posner Blvd", text: "Burgers and frozen custard at 1107 Posner Blvd. Directions, because a first-party branch URL was not found.", image: "/davenport-table/media/food/culvers-logo.svg", alt: "Culver's logo.", caption: "Official Culver's logo, not a photo of the Posner Boulevard restaurant.", logo: true },
+    "five-guys": { href: "https://restaurants.fiveguys.com/fl/davenport", name: "Five Guys, Davenport", text: "Burgers and fries at 1321 Posner Blvd.", image: "/davenport-table/media/food/five-guys-logo.jpg", alt: "Five Guys logo on a red square.", caption: "Official Five Guys logo from the location site. Not a photo of the Posner Boulevard restaurant.", logo: true },
+    "huey-magoos": { href: "https://order.hueymagoos.com/", name: "Huey Magoo's, ChampionsGate", text: "Chicken tenders at 8316 Champions Gate Blvd. The order page lists this branch. No hours are copied from the 2019 opening notice.", image: "/davenport-table/media/food/huey-magoos-logo.jpg", alt: "Huey Magoo's Chicken Tenders logo.", caption: "Official Huey Magoo's logo, not a photo of the ChampionsGate restaurant.", logo: true },
+    "moes": { href: "https://locations.moes.com/fl/clermont/890-us-hwy-27", name: "Moe's Southwest Grill, Four Corners", text: "The nearest verified Moe's branch, at 890 US Hwy 27, Clermont. Burritos and bowls. This is not a Champions Gate storefront.", image: "/davenport-table/media/food/moes-logo.png", alt: "Moe's Southwest Grill logo.", caption: "Official logo from the Four Corners location page, not a photo of the restaurant.", logo: true },
+    "outback": { href: "https://locations.outback.com/florida/davenport/996-heritage-pass", name: "Outback Steakhouse, Davenport", text: "Steaks at 996 Heritage Pass. The only Outback listed for Davenport.", image: "/davenport-table/media/food/outback-logo.svg", alt: "Outback wordmark logo.", caption: "Official Outback logo from outback.com. Not a photo of the Heritage Pass restaurant.", logo: true },
+    "longhorn": { href: "https://www.longhornsteakhouse.com/locations/fl/davenport/championsgate/5616", name: "LongHorn Steakhouse, ChampionsGate", text: "Steaks at 8095 Osceola Polk Line Rd, just east of I-4 exit 58.", image: "/davenport-table/media/food/longhorn-favicon.png", alt: "Small LongHorn steer icon from the restaurant site.", caption: "Official site icon from longhornsteakhouse.com. The larger logo file returned 403, so this is the 32-pixel favicon, not a photo of the ChampionsGate restaurant.", logo: true },
+    "carrabbas": { href: "https://locations.carrabbas.com/florida/davenport/1005-heritage-pass", name: "Carrabba's Italian Grill, Davenport", text: "Italian grill at 1005 Heritage Pass, next to the Davenport Outback.", image: "/davenport-table/media/food/carrabbas-logo.svg", alt: "Carrabba's Italian Grill wordmark.", caption: "Official Carrabba's logo from carrabbas.com. Not a photo of the Heritage Pass restaurant.", logo: true },
+    "texas-roadhouse": { href: "https://www.texasroadhouse.com/locations/champions-gate", name: "Texas Roadhouse, Champions Gate", text: "The Champions Gate store is at 1997 Aegean Way, Davenport, FL 33896. Census did not match that address, and the location page did not publish coordinates, so it is not given a mile ranking.", image: "/davenport-table/media/food/texas-roadhouse-brand.jpg", alt: "Texas Roadhouse sign on a restaurant building at dusk.", caption: "Official brand photo from texasroadhouse.com. It is company imagery, not a confirmed photo of the Champions Gate building." }
   };
 
   function nav() {
@@ -63,6 +63,7 @@ window.RETREAT_BOARD = "ready";
       var img = document.createElement("img");
       img.src = extra.image;
       img.alt = extra.alt;
+      if (extra.logo) img.className = "brand-mark";
       var cap = document.createElement("figcaption");
       cap.textContent = extra.caption;
       figure.appendChild(img);
@@ -191,6 +192,12 @@ window.RETREAT_BOARD = "ready";
     script.src = "/davenport-table/games-board.js";
     script.dataset.gamesBoard = "1";
     document.body.appendChild(script);
+  }
+  if (!document.getElementById("brand-mark-style")) {
+    var style = document.createElement("style");
+    style.id = "brand-mark-style";
+    style.textContent = ".food-photo img.brand-mark{width:auto;max-width:min(100%,280px);max-height:120px;margin:1rem auto;object-fit:contain;display:block}";
+    document.head.appendChild(style);
   }
   function apply() {
     nav();
