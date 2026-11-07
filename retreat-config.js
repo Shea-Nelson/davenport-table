@@ -185,10 +185,18 @@ window.RETREAT_BOARD = "ready";
     lede.insertAdjacentElement("afterend", p);
   }
 
+  function gamesBoard() {
+    if (!/\/games\/?$/.test(location.pathname) || document.querySelector("script[data-games-board]")) return;
+    var script = document.createElement("script");
+    script.src = "/davenport-table/games-board.js";
+    script.dataset.gamesBoard = "1";
+    document.body.appendChild(script);
+  }
   function apply() {
     nav();
     eats();
     gamesLink();
+    gamesBoard();
   }
   apply();
   new MutationObserver(apply).observe(document.documentElement, { childList: true, subtree: true });

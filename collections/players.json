@@ -1,0 +1,17 @@
+{
+  "note": "Only edition-specific counts checked against a publisher or product page in this project. Every other catalog game is Not verified. Durations are not included.",
+  "games": {
+    "171131": {"min": 2, "max": 8, "basis": "edition", "source": "https://www.matagot.com/en/strategy-games/133-captain-sonar.html"},
+    "441706": {"min": 2, "max": 5, "basis": "edition", "source": "https://store.asmodee.com/products/quacks-all-in-edition"},
+    "331685": {"min": 3, "max": 6, "basis": "edition", "source": "https://escapeplanboardgames.com/wp-content/uploads/2026/02/Hit-the-Silk-Second-Edition-Game-Guide-Draft-KS.pdf"},
+    "472022": {"min": 3, "max": 6, "basis": "edition", "source": "https://invisibletypewriter.fun/products/the-dealer"},
+    "434172": {"min": 2, "max": 8, "basis": "edition", "source": "https://roxley.com/collections/board-games/products/excalibur"},
+    "271601": {"min": 5, "max": 11, "basis": "edition", "source": "https://funtails.de/en/feed-the-kraken/"},
+    "340834": {"min": 2, "max": 6, "basis": "edition", "source": "https://renegadegamestudios.com/gravwell/"},
+    "233994": {"min": 3, "max": 8, "basis": "edition", "source": "https://www.amazon.com/Buffalo-Games-Sunken-Sailor-Drawing/dp/B076XL3ND4"},
+    "345266": {"min": 1, "max": 4, "basis": "edition", "source": "https://slugfestgames.com/tales-from-the-rdi/"},
+    "342070": {"min": 2, "max": 4, "basis": "edition", "source": "https://restorationgames.com/wp-content/uploads/2023/11/TRV-Base-Game-Rulebook.pdf"},
+    "9220": {"min": 3, "max": 10, "basis": "edition", "source": "https://blog.amigo-spiele.de/content/ap/rule/04900-GB-AmigoRule.pdf"},
+    "218178": {"basis": "base", "label": "Base game: 2–8", "source": "https://www.matagot.com/en/strategy-games/133-captain-sonar.html"}
+  }
+}

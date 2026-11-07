@@ -67,6 +67,7 @@
   var owner = document.getElementById("owned-owner");
   var kind = document.getElementById("owned-kind");
   var games = [];
+  var playersById = {};
   var live = false;
   var you = null;
   var saved = [];
@@ -96,7 +97,19 @@
       h2.textContent = game.title;
       var meta = document.createElement("p");
       meta.className = "hint";
-      meta.textContent = ownersLabel(game.owners) + (game.isExpansion ? " · Expansion" : " · Game");
+      var players = playersById[String(game.bggId)];
+      var playersText = "Players: Not verified";
+      if (players && players.basis === "base") playersText = "Players: " + players.label;
+      else if (players && players.min != null && players.max != null) playersText = "Players: " + players.min + "–" + players.max;
+      var decisions = "";
+      var related = saved.filter(function (row) { return row.bggId === game.bggId; });
+      if (related.length) {
+        decisions = " " + related.map(function (row) {
+          var choices = (row.decisions || []).map(function (item) { return item.owner + " " + item.decision; }).join(", ");
+          return "Requested by " + row.requesterName + (choices ? " (" + choices + ")" : " (waiting on an owner)");
+        }).join(" ");
+      }
+      meta.textContent = ownersLabel(game.owners) + (game.isExpansion ? " · Expansion" : " · Game") + " · " + playersText + "." + decisions;
       var links = document.createElement("p");
       var bgg = document.createElement("a");
       bgg.href = game.url;
@@ -198,6 +211,9 @@
     if (!response.ok) throw new Error("missing");
     return response.json();
   }
+  var playersReady = fetch("/davenport-table/collections/players.json").then(function (response) { return response.ok ? response.json() : { games: {} }; }).then(function (data) {
+    playersById = data.games || {};
+  }).catch(function () {});
   api("/api/owned").then(readCatalog).catch(function () {
     return fetch("/davenport-table/collections/owned.json").then(readCatalog);
   })
@@ -209,7 +225,7 @@
       search.addEventListener("input", show);
       owner.addEventListener("change", show);
       kind.addEventListener("change", show);
-      return loadBoard().then(show);
+      return playersReady.then(function () { return loadBoard().then(show); });
     })
     .catch(function () {
       count.textContent = "The owned snapshot did not load.";

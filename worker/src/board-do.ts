@@ -203,6 +203,15 @@ export class BoardDurableObject extends DurableObject<Env> {
         created_at TEXT NOT NULL,
         UNIQUE (attendee_id, bgg_id)
       );
+      CREATE TABLE IF NOT EXISTS game_request_decisions (
+        request_id TEXT NOT NULL,
+        owner_name TEXT NOT NULL,
+        attendee_id TEXT NOT NULL,
+        decision TEXT NOT NULL,
+        shelf_game_id TEXT,
+        decided_at TEXT NOT NULL,
+        PRIMARY KEY (request_id, owner_name)
+      );
     `);
     if (!first(this.sql, "SELECT value FROM meta WHERE key = 'salt'")) {
       this.sql.exec("INSERT INTO meta (key, value) VALUES ('salt', ?)", crypto.randomUUID() + crypto.randomUUID());
@@ -350,6 +359,19 @@ export class BoardDurableObject extends DurableObject<Env> {
       const result = this.createRequest(session.id, data.bggId, rateKey);
       if (!result.ok) return json({ error: result.error }, result.status);
       return json({ ok: true, created: result.created, request: result.request });
+    }
+
+    const decisionMatch = key.match(/^requests\/([0-9a-f-]{36})\/decision$/i);
+    if (decisionMatch && method === "POST") {
+      const result = this.decideRequest(session, decisionMatch[1], data.decision, rateKey);
+      if (!result.ok) return json({ error: result.error }, result.status);
+      return json({
+        ok: true,
+        created: result.created,
+        decision: result.decision,
+        request: result.request,
+        board: await this.board(session),
+      });
     }
 
     const requestById = key.match(/^requests\/([0-9a-f-]{36})$/i);
@@ -583,6 +605,11 @@ export class BoardDurableObject extends DurableObject<Env> {
     const removed = this.ctx.storage.transactionSync(() => {
       this.sql.exec("DELETE FROM claims WHERE attendee_id = ?", attendeeId);
       this.sql.exec("DELETE FROM games WHERE attendee_id = ?", attendeeId);
+      this.sql.exec("DELETE FROM game_request_decisions WHERE attendee_id = ?", attendeeId);
+      this.sql.exec(
+        "DELETE FROM game_request_decisions WHERE request_id IN (SELECT id FROM game_requests WHERE attendee_id = ?)",
+        attendeeId,
+      );
       this.sql.exec("DELETE FROM game_requests WHERE attendee_id = ?", attendeeId);
       return written(this.sql, "DELETE FROM attendees WHERE id = ?", attendeeId);
     });
@@ -728,20 +755,53 @@ export class BoardDurableObject extends DurableObject<Env> {
   }
 
   private listRequests() {
+    const decisions = all(
+      this.sql,
+      `SELECT request_id AS requestId, owner_name AS owner, attendee_id AS attendeeId,
+              decision, shelf_game_id AS shelfGameId, decided_at AS decidedAt
+       FROM game_request_decisions
+       ORDER BY decided_at ASC`,
+    );
+    const byRequest = new Map<string, ReturnType<BoardDurableObject["decisionView"]>[]>();
+    for (const row of decisions) {
+      const requestId = String(row.requestId);
+      const list = byRequest.get(requestId) ?? [];
+      list.push(this.decisionView(row));
+      byRequest.set(requestId, list);
+    }
     return all(
       this.sql,
       `SELECT r.id AS id, r.bgg_id AS bggId, r.title AS title, r.attendee_id AS requesterId,
               a.nickname AS requesterName, r.created_at AS createdAt
        FROM game_requests r JOIN attendees a ON a.id = r.attendee_id
        ORDER BY r.created_at ASC, r.title ASC`,
-    ).map((row) => ({
+    ).map((row) => this.requestView(row, byRequest.get(String(row.id)) ?? []));
+  }
+
+  private decisionView(row: Row) {
+    return {
+      owner: String(row.owner),
+      attendeeId: String(row.attendeeId),
+      decision: String(row.decision),
+      shelfGameId: row.shelfGameId ? String(row.shelfGameId) : null,
+      decidedAt: String(row.decidedAt),
+    };
+  }
+
+  private requestView(row: Row, decisions: ReturnType<BoardDurableObject["decisionView"]>[]) {
+    const bggId = Number(row.bggId ?? row.bgg_id);
+    const requesterId = String(row.requesterId ?? row.attendee_id);
+    const owned = ownedById.get(bggId);
+    return {
       id: String(row.id),
-      bggId: Number(row.bggId),
+      bggId,
       title: String(row.title),
-      requesterId: String(row.requesterId),
-      requesterName: String(row.requesterName),
-      createdAt: String(row.createdAt),
-    }));
+      requesterId,
+      requesterName: row.requesterName ? String(row.requesterName) : "",
+      createdAt: String(row.createdAt ?? row.created_at),
+      owners: owned ? owned.owners.slice() : [],
+      decisions,
+    };
   }
 
   private createRequest(attendeeId: string, bggId: unknown, rateKey: string) {
@@ -752,7 +812,7 @@ export class BoardDurableObject extends DurableObject<Env> {
     const game = ownedById.get(bggId);
     if (!game) return { ok: false as const, status: 400, error: "That game is not in the owned-collection snapshot." };
     const existing = first(this.sql, "SELECT id, bgg_id, title, attendee_id, created_at FROM game_requests WHERE attendee_id = ? AND bgg_id = ?", attendeeId, bggId);
-    if (existing) return { ok: true as const, created: false, request: this.publicRequest(existing, attendeeId) };
+    if (existing) return { ok: true as const, created: false, request: this.requestFromRow(existing) };
     const id = crypto.randomUUID();
     const createdAt = new Date().toISOString();
     try {
@@ -768,25 +828,22 @@ export class BoardDurableObject extends DurableObject<Env> {
       if (!isUnique(error)) throw error;
       const raced = first(this.sql, "SELECT id, bgg_id, title, attendee_id, created_at FROM game_requests WHERE attendee_id = ? AND bgg_id = ?", attendeeId, bggId);
       if (!raced) throw error;
-      return { ok: true as const, created: false, request: this.publicRequest(raced, attendeeId) };
+      return { ok: true as const, created: false, request: this.requestFromRow(raced) };
     }
-    return {
-      ok: true as const,
-      created: true,
-      request: { id, bggId, title: game.title, requesterId: attendeeId, createdAt },
-    };
+    return { ok: true as const, created: true, request: this.requestFromRow({ id, bgg_id: bggId, title: game.title, attendee_id: attendeeId, created_at: createdAt }) };
   }
 
-  private publicRequest(row: Row, attendeeId: string) {
-    const person = first(this.sql, "SELECT nickname FROM attendees WHERE id = ?", attendeeId);
-    return {
-      id: String(row.id),
-      bggId: Number(row.bgg_id),
-      title: String(row.title),
-      requesterId: attendeeId,
-      requesterName: person ? String(person.nickname) : "",
-      createdAt: String(row.created_at),
-    };
+  private requestFromRow(row: Row) {
+    const id = String(row.id);
+    const decisions = all(
+      this.sql,
+      `SELECT owner_name AS owner, attendee_id AS attendeeId, decision, shelf_game_id AS shelfGameId, decided_at AS decidedAt
+       FROM game_request_decisions WHERE request_id = ? ORDER BY decided_at ASC`,
+      id,
+    ).map((item) => this.decisionView(item));
+    const requesterId = String(row.attendee_id);
+    const person = first(this.sql, "SELECT nickname FROM attendees WHERE id = ?", requesterId);
+    return this.requestView({ ...row, bggId: row.bgg_id, requesterId, requesterName: person?.nickname ?? "", createdAt: row.created_at }, decisions);
   }
 
   private withdrawRequest(attendeeId: string, requestId: string, rateKey: string) {
@@ -796,26 +853,108 @@ export class BoardDurableObject extends DurableObject<Env> {
     if (String(row.attendee_id) !== attendeeId) {
       return { ok: false as const, status: 403, error: "Only the peep who asked for that game can withdraw it." };
     }
+    this.sql.exec("DELETE FROM game_request_decisions WHERE request_id = ?", requestId);
     const changes = written(this.sql, "DELETE FROM game_requests WHERE id = ? AND attendee_id = ?", requestId, attendeeId);
     return { ok: true as const, removed: changes > 0 };
   }
 
   private withdrawRequestByGame(attendeeId: string, bggId: number, rateKey: string) {
     if (!this.allowMutation(attendeeId, rateKey)) return RATE_LIMIT;
+    const rows = all(this.sql, "SELECT id FROM game_requests WHERE attendee_id = ? AND bgg_id = ?", attendeeId, bggId);
+    for (const row of rows) this.sql.exec("DELETE FROM game_request_decisions WHERE request_id = ?", String(row.id));
     const changes = written(this.sql, "DELETE FROM game_requests WHERE attendee_id = ? AND bgg_id = ?", attendeeId, bggId);
     return { ok: true as const, removed: changes > 0 };
+  }
+
+  private decideRequest(session: { id: string; nickname: string }, requestId: string, decision: unknown, rateKey: string) {
+    if (!this.allowMutation(session.id, rateKey)) return RATE_LIMIT;
+    if (decision !== "bring" && decision !== "decline") {
+      return { ok: false as const, status: 400, error: "Choose bring or decline." };
+    }
+    const request = first(this.sql, "SELECT id, bgg_id, title, attendee_id, created_at FROM game_requests WHERE id = ?", requestId);
+    if (!request) return { ok: false as const, status: 404, error: "That request is no longer on the list." };
+    const owned = ownedById.get(Number(request.bgg_id));
+    const ownerName = owned?.owners.find((owner) => owner.toLowerCase() === session.nickname.trim().toLowerCase());
+    if (!ownerName) {
+      return { ok: false as const, status: 403, error: "Only a peep who owns that game can decide. Shea and Grease match the collection names." };
+    }
+    const prior = first(
+      this.sql,
+      `SELECT owner_name AS owner, attendee_id AS attendeeId, decision, shelf_game_id AS shelfGameId, decided_at AS decidedAt
+       FROM game_request_decisions WHERE request_id = ? AND owner_name = ?`,
+      requestId,
+      ownerName,
+    );
+    if (prior) {
+      if (String(prior.decision) !== decision) {
+        return { ok: false as const, status: 409, error: "That owner already decided. The earlier choice stays." };
+      }
+      return { ok: true as const, created: false, decision: this.decisionView(prior), request: this.requestFromRow(request) };
+    }
+    let shelfGameId: string | null = null;
+    if (decision === "bring") {
+      const shelfTitle = shelfTitleFor(String(request.title));
+      if (!shelfTitle) return { ok: false as const, status: 400, error: "That title cannot be added to the shelf." };
+      const already = all(this.sql, "SELECT id, title, note FROM games WHERE attendee_id = ?", session.id).find((row) =>
+        titlesMatch(String(row.title), String(request.title)),
+      );
+      if (already) {
+        shelfGameId = String(already.id);
+      } else {
+        shelfGameId = crypto.randomUUID();
+        const now = new Date().toISOString();
+        this.sql.exec(
+          "INSERT INTO games (id, title, attendee_id, min_players, max_players, note, created_at, updated_at) VALUES (?, ?, ?, NULL, NULL, '', ?, ?)",
+          shelfGameId,
+          shelfTitle,
+          session.id,
+          now,
+          now,
+        );
+      }
+    }
+    const decidedAt = new Date().toISOString();
+    this.sql.exec(
+      `INSERT INTO game_request_decisions (request_id, owner_name, attendee_id, decision, shelf_game_id, decided_at)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      requestId,
+      ownerName,
+      session.id,
+      decision,
+      shelfGameId,
+      decidedAt,
+    );
+    return {
+      ok: true as const,
+      created: true,
+      decision: { owner: ownerName, attendeeId: session.id, decision, shelfGameId, decidedAt },
+      request: this.requestFromRow(request),
+    };
   }
 
   private reset() {
     this.ctx.storage.transactionSync(() => {
       this.sql.exec("DELETE FROM claims");
       this.sql.exec("DELETE FROM games");
+      this.sql.exec("DELETE FROM game_request_decisions");
       this.sql.exec("DELETE FROM game_requests");
       this.sql.exec("DELETE FROM attendees");
       this.sql.exec("UPDATE settings SET value = '0' WHERE key = 'heat'");
       this.sql.exec("DELETE FROM rate_limits");
     });
   }
+}
+
+function titlesMatch(left: string, right: string): boolean {
+  const norm = (value: string) => value.trim().toLowerCase().replace(/\s+/g, " ");
+  const strip = (value: string) => norm(value).replace(/\s*\([^)]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
+  return norm(left) === norm(right) || strip(left) === strip(right);
+}
+
+function shelfTitleFor(title: string): string | null {
+  const direct = cleanTitle(title);
+  if (direct) return direct;
+  return cleanTitle(title.replace(/\s*\([^)]*\)\s*/g, " "));
 }
 
 function asBool(value: unknown): boolean | null {
