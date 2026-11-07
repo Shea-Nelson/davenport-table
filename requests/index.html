@@ -107,6 +107,8 @@
       var button = document.createElement("button");
       button.type = "button";
       button.className = "btn";
+      button.dataset.bgg = String(game.bggId);
+      if (mine) button.dataset.requestId = mine.id;
       if (!live) {
         button.disabled = true;
         button.textContent = "Request";
@@ -115,10 +117,10 @@
         button.textContent = "Sign in on Peeps";
       } else if (mine) {
         button.textContent = "Withdraw";
-        button.addEventListener("click", function () { withdraw(mine.id); });
+        button.addEventListener("click", function () { withdraw(button.dataset.requestId); });
       } else {
         button.textContent = "Request";
-        button.addEventListener("click", function () { ask(game.bggId); });
+        button.addEventListener("click", function () { ask(Number(button.dataset.bgg)); });
       }
       links.appendChild(document.createTextNode(" "));
       links.appendChild(button);
@@ -130,46 +132,75 @@
     list.appendChild(frag);
     count.textContent = shown + " shown." + (live ? "" : " Request buttons stay off until the board update is deployed.");
   }
+  var CODE_KEY = "retreat-edit-code";
+  function authHeaders(extra) {
+    var headers = { accept: "application/json" };
+    try {
+      var code = sessionStorage.getItem(CODE_KEY);
+      if (code) headers.authorization = "Bearer " + code;
+    } catch (e) {}
+    if (extra) Object.keys(extra).forEach(function (key) { headers[key] = extra[key]; });
+    return headers;
+  }
+  function api(path, options) {
+    return fetch(window.RETREAT_API + path, {
+      method: options && options.method || "GET",
+      credentials: "include",
+      headers: authHeaders(options && options.headers),
+      body: options && options.body
+    });
+  }
+  function clearCode() {
+    try { sessionStorage.removeItem(CODE_KEY); } catch (e) {}
+  }
   function loadBoard() {
-    return fetch(window.RETREAT_API + "/api/requests", { credentials: "include", headers: { accept: "application/json" } })
-      .then(function (response) { if (!response.ok) throw new Error("off"); return response.json(); })
-      .then(function (data) {
-        if (!data || !Array.isArray(data.requests)) throw new Error("off");
-        live = true;
-        saved = data.requests;
-        status.textContent = "A request asks someone to bring a game. It does not add the game to the shelf.";
-        return fetch(window.RETREAT_API + "/api/board", { credentials: "include", headers: { accept: "application/json" } });
-      })
-      .then(function (response) { return response.json(); })
-      .then(function (board) {
-        you = board && board.you ? board.you : null;
-        if (you) status.textContent = "Signed in as " + you.nickname + ". A request is not the same as adding the game to the shelf.";
-        else status.textContent = "Request saving is on the board. Sign in on Peeps before asking for a game. A request is not a shelf entry.";
-      })
-      .catch(function () {
-        live = false;
-        saved = [];
-        you = null;
-        status.textContent = "Request saving is not live. The board update that would store a request has not been deployed, so nothing on this page is saved.";
-      });
+    return api("/api/requests").then(function (response) {
+      if (!response.ok) throw new Error("off");
+      return response.json();
+    }).then(function (data) {
+      if (!data || !Array.isArray(data.requests)) throw new Error("off");
+      live = true;
+      saved = data.requests;
+      return api("/api/board");
+    }).then(function (response) {
+      if (response.status === 401) clearCode();
+      return response.json().then(function (board) { return { response: response, board: board }; });
+    }).then(function (result) {
+      if (result.response.headers.get("x-retreat-credential") === "stale") clearCode();
+      you = result.board && result.board.you ? result.board.you : null;
+      var n = saved.length;
+      if (you) status.textContent = "Signed in as " + you.nickname + ". " + n + " request" + (n === 1 ? "" : "s") + " on the board. A request is not the same as adding the game to the shelf.";
+      else status.textContent = "Request saving is on the board. Sign in on Peeps before asking for a game. A request is not a shelf entry. " + n + " request" + (n === 1 ? "" : "s") + " saved.";
+    }).catch(function () {
+      live = false;
+      saved = [];
+      you = null;
+      status.textContent = "Request saving is not live. The board update that would store a request has not been deployed, so nothing on this page is saved.";
+    });
   }
   function ask(bggId) {
-    fetch(window.RETREAT_API + "/api/requests", {
+    api("/api/requests", {
       method: "POST",
-      credentials: "include",
-      headers: { "content-type": "application/json", accept: "application/json" },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify({ bggId: bggId })
-    }).then(function () { return loadBoard(); }).then(show);
+    }).then(function (response) {
+      if (response.status === 401) clearCode();
+      return loadBoard();
+    }).then(show);
   }
   function withdraw(id) {
-    fetch(window.RETREAT_API + "/api/requests/" + id, {
-      method: "DELETE",
-      credentials: "include",
-      headers: { accept: "application/json" }
-    }).then(function () { return loadBoard(); }).then(show);
+    api("/api/requests/" + id, { method: "DELETE" }).then(function (response) {
+      if (response.status === 401) clearCode();
+      return loadBoard();
+    }).then(show);
   }
-  fetch("/davenport-table/collections/owned.json")
-    .then(function (response) { if (!response.ok) throw new Error("missing"); return response.json(); })
+  function readCatalog(response) {
+    if (!response.ok) throw new Error("missing");
+    return response.json();
+  }
+  api("/api/owned").then(readCatalog).catch(function () {
+    return fetch("/davenport-table/collections/owned.json").then(readCatalog);
+  })
     .then(function (data) {
       games = data.games || [];
       var shea = data.snapshots.find(function (row) { return row.owner === "Shea"; });
