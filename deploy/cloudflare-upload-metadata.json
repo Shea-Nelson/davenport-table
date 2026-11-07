@@ -1,0 +1,42 @@
+{
+  "main_module": "worker.js",
+  "compatibility_date": "2026-03-01",
+  "compatibility_flags": [],
+  "keep_bindings": ["secret_text"],
+  "bindings": [
+    {
+      "type": "plain_text",
+      "name": "ALLOWED_ORIGINS",
+      "text": "https://shea-nelson.github.io,http://127.0.0.1:47221,http://localhost:47221"
+    },
+    {
+      "type": "plain_text",
+      "name": "RETREAT_SIGNUP_LIMIT",
+      "text": "40"
+    },
+    {
+      "type": "plain_text",
+      "name": "RETREAT_MUTATION_LIMIT",
+      "text": "40"
+    },
+    {
+      "type": "plain_text",
+      "name": "RETREAT_HOUSE_LIMIT",
+      "text": "240"
+    },
+    {
+      "type": "durable_object_namespace",
+      "name": "BOARD",
+      "class_name": "BoardDurableObject",
+      "namespace_id": "800f439661e341809c918d307e3b1da9"
+    }
+  ],
+  "migrations": {
+    "new_tag": "v1",
+    "steps": [
+      {
+        "new_sqlite_classes": ["BoardDurableObject"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "davenport-table",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:worker": "esbuild worker/src/index.ts --bundle --format=esm --minify --keep-names --external:cloudflare:workers --outfile=deploy/worker.js",
+    "test:stay": "node --import tsx --test --test-concurrency=1 tests/stay.test.ts",
+    "test:requests": "node --import tsx --test --test-concurrency=1 tests/requests.test.ts",
+    "test:worker": "node --import tsx --test --test-concurrency=1 tests/worker.test.ts tests/stay.test.ts tests/requests.test.ts"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.10",
+    "tsx": "^4.20.6",
+    "wrangler": "^3.114.15"
+  }
+}

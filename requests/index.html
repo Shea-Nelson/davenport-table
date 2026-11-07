@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Owned games · The Davenport Table</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="stylesheet" href="/davenport-table/_next/static/chunks/3f92k8hgoqp7a.css"/>
+<link rel="icon" href="/davenport-table/icon.svg" type="image/svg+xml"/>
+</head>
+<body>
+<header class="site-header">
+<a class="skip" href="#content">Skip to content</a>
+<div class="bar">
+<a class="wordmark" href="/davenport-table/">The Davenport Table<small>Jan 14–18, 2027</small></a>
+<nav class="desk-nav" aria-label="Primary"><ul>
+<li><a href="/davenport-table/">House</a></li>
+<li><a href="/davenport-table/people/">Peeps</a></li>
+<li><a href="/davenport-table/rooms/">Rooms</a></li>
+<li><a href="/davenport-table/games/">Games</a></li>
+<li><a href="/davenport-table/requests/" aria-current="page">Requests</a></li>
+<li><a href="/davenport-table/eats/">Eats</a></li>
+<li><a href="/davenport-table/practical/">Fine print</a></li>
+</ul></nav>
+</div>
+</header>
+<main id="content">
+<div class="wrap section stack">
+<p class="kicker">Public collections</p>
+<h1>Games Shea and Grease own</h1>
+<p class="lede">This list is a snapshot of two public BoardGameGeek owned pages. It is not the shelf. Adding a game you are bringing still happens on the Games page after you sign in with your edit code.</p>
+<p class="hint" id="request-status" role="note">Request saving is not live. The board update that would store a request has not been deployed, so nothing on this page is saved.</p>
+<div class="field">
+<label for="owned-search">Search titles</label>
+<input id="owned-search" type="search" autocomplete="off"/>
+</div>
+<div class="field">
+<label for="owned-owner">Owner</label>
+<select id="owned-owner">
+<option value="all">Anyone</option>
+<option value="Shea">Shea</option>
+<option value="Grease">Grease</option>
+<option value="both">Both</option>
+</select>
+</div>
+<div class="field">
+<label for="owned-kind">Kind</label>
+<select id="owned-kind">
+<option value="all">Games and expansions</option>
+<option value="game">Games</option>
+<option value="expansion">Expansions</option>
+</select>
+</div>
+<p id="owned-meta" class="hint">Loading the snapshot.</p>
+<p id="owned-count" class="hint" role="status"></p>
+<div id="owned-list" class="stack"></div>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap"><p>The street address of the house is not published.</p></div></footer>
+<script src="/davenport-table/retreat-config.js"></script>
+<script>
+(function () {
+  var list = document.getElementById("owned-list");
+  var meta = document.getElementById("owned-meta");
+  var count = document.getElementById("owned-count");
+  var search = document.getElementById("owned-search");
+  var owner = document.getElementById("owned-owner");
+  var kind = document.getElementById("owned-kind");
+  var games = [];
+  var live = false;
+  var you = null;
+  var saved = [];
+  var status = document.getElementById("request-status");
+  function ownersLabel(owners) {
+    if (owners.length === 2) return "Shea and Grease";
+    return owners[0] || "";
+  }
+  function show() {
+    var q = search.value.trim().toLowerCase();
+    var who = owner.value;
+    var which = kind.value;
+    var shown = 0;
+    list.replaceChildren();
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < games.length; i += 1) {
+      var game = games[i];
+      if (q && game.title.toLowerCase().indexOf(q) === -1) continue;
+      if (who === "both" && game.owners.length !== 2) continue;
+      if ((who === "Shea" || who === "Grease") && game.owners.indexOf(who) === -1) continue;
+      if (which === "game" && game.isExpansion) continue;
+      if (which === "expansion" && !game.isExpansion) continue;
+      shown += 1;
+      var article = document.createElement("article");
+      article.className = "sheet";
+      var h2 = document.createElement("h2");
+      h2.textContent = game.title;
+      var meta = document.createElement("p");
+      meta.className = "hint";
+      meta.textContent = ownersLabel(game.owners) + (game.isExpansion ? " · Expansion" : " · Game");
+      var links = document.createElement("p");
+      var bgg = document.createElement("a");
+      bgg.href = game.url;
+      bgg.rel = "noopener noreferrer";
+      bgg.textContent = "View on BGG";
+      links.appendChild(bgg);
+      var mine = saved.find(function (row) { return you && row.bggId === game.bggId && row.requesterId === you.id; });
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "btn";
+      if (!live) {
+        button.disabled = true;
+        button.textContent = "Request";
+      } else if (!you) {
+        button.disabled = true;
+        button.textContent = "Sign in on Peeps";
+      } else if (mine) {
+        button.textContent = "Withdraw";
+        button.addEventListener("click", function () { withdraw(mine.id); });
+      } else {
+        button.textContent = "Request";
+        button.addEventListener("click", function () { ask(game.bggId); });
+      }
+      links.appendChild(document.createTextNode(" "));
+      links.appendChild(button);
+      article.appendChild(h2);
+      article.appendChild(meta);
+      article.appendChild(links);
+      frag.appendChild(article);
+    }
+    list.appendChild(frag);
+    count.textContent = shown + " shown." + (live ? "" : " Request buttons stay off until the board update is deployed.");
+  }
+  function loadBoard() {
+    return fetch(window.RETREAT_API + "/api/requests", { credentials: "include", headers: { accept: "application/json" } })
+      .then(function (response) { if (!response.ok) throw new Error("off"); return response.json(); })
+      .then(function (data) {
+        if (!data || !Array.isArray(data.requests)) throw new Error("off");
+        live = true;
+        saved = data.requests;
+        status.textContent = "A request asks someone to bring a game. It does not add the game to the shelf.";
+        return fetch(window.RETREAT_API + "/api/board", { credentials: "include", headers: { accept: "application/json" } });
+      })
+      .then(function (response) { return response.json(); })
+      .then(function (board) {
+        you = board && board.you ? board.you : null;
+        if (you) status.textContent = "Signed in as " + you.nickname + ". A request is not the same as adding the game to the shelf.";
+        else status.textContent = "Request saving is on the board. Sign in on Peeps before asking for a game. A request is not a shelf entry.";
+      })
+      .catch(function () {
+        live = false;
+        saved = [];
+        you = null;
+        status.textContent = "Request saving is not live. The board update that would store a request has not been deployed, so nothing on this page is saved.";
+      });
+  }
+  function ask(bggId) {
+    fetch(window.RETREAT_API + "/api/requests", {
+      method: "POST",
+      credentials: "include",
+      headers: { "content-type": "application/json", accept: "application/json" },
+      body: JSON.stringify({ bggId: bggId })
+    }).then(function () { return loadBoard(); }).then(show);
+  }
+  function withdraw(id) {
+    fetch(window.RETREAT_API + "/api/requests/" + id, {
+      method: "DELETE",
+      credentials: "include",
+      headers: { accept: "application/json" }
+    }).then(function () { return loadBoard(); }).then(show);
+  }
+  fetch("/davenport-table/collections/owned.json")
+    .then(function (response) { if (!response.ok) throw new Error("missing"); return response.json(); })
+    .then(function (data) {
+      games = data.games || [];
+      var shea = data.snapshots.find(function (row) { return row.owner === "Shea"; });
+      var grease = data.snapshots.find(function (row) { return row.owner === "Grease"; });
+      meta.textContent = "Raw rows " + data.rawRows + " (" + (shea ? shea.rawRows : "?") + " Shea, " + (grease ? grease.rawRows : "?") + " Grease). Unique games " + data.uniqueGames + ". Owned by both " + data.ownedByBoth + ". Grease's export repeated Hedbanz, id 23049.";
+      search.addEventListener("input", show);
+      owner.addEventListener("change", show);
+      kind.addEventListener("change", show);
+      return loadBoard().then(show);
+    })
+    .catch(function () {
+      count.textContent = "The owned snapshot did not load.";
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Workers Free only. Do not set a paid usage model, a route that needs a subscription,
+# or a payment method. Deploy only after the Cloudflare connector is signed in.
+name = "davenport-table-api"
+main = "worker/src/index.ts"
+compatibility_date = "2026-03-01"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGINS = "https://shea-nelson.github.io,http://127.0.0.1:47221,http://localhost:47221"
+# One house shares one address. 40 signups per 10 minutes covers the roster cap, including rejected attempts.
+# Saves are also limited per nickname (RETREAT_MUTATION_LIMIT). The house ceiling is the backstop.
+RETREAT_SIGNUP_LIMIT = "40"
+RETREAT_MUTATION_LIMIT = "40"
+RETREAT_HOUSE_LIMIT = "240"
+
+[[durable_objects.bindings]]
+name = "BOARD"
+class_name = "BoardDurableObject"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["BoardDurableObject"]
