@@ -1,5 +1,5 @@
-:HL["/davenport-table/_next/static/chunks/3xg269vg7nepb.css","style"]
+:HL["/davenport-table/_next/static/chunks/3f92k8hgoqp7a.css","style"]
 :HC["/",""]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"games","h":96,"c":"$Q2"}]]
-0:{"b":"fseuGzPKUZRk3YocIyxDI","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"wzhqnbhb_mNZBiTRxqnFy","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
