@@ -1,17 +1,2779 @@
 {
-  "note": "Only edition-specific counts checked against a publisher or product page in this project. Every other catalog game is Not verified. Durations are not included.",
+  "note": "Edition rows were checked against a publisher or product page and are kept ahead of any older dataset. Dataset rows are exact BoardGameGeek id matches from public snapshots; the year is a snapshot label, not a promise the count is current. Expansion rows need the base game. Hot Streak is open-ended, 2–9+, and has no numeric maximum. Counts of 99 and unresolved conflicts were not imported. Durations are not included.",
+  "coverage": {
+    "catalog": 483,
+    "withCount": 348,
+    "unknown": 135
+  },
   "games": {
-    "171131": {"min": 2, "max": 8, "basis": "edition", "source": "https://www.matagot.com/en/strategy-games/133-captain-sonar.html"},
-    "441706": {"min": 2, "max": 5, "basis": "edition", "source": "https://store.asmodee.com/products/quacks-all-in-edition"},
-    "331685": {"min": 3, "max": 6, "basis": "edition", "source": "https://escapeplanboardgames.com/wp-content/uploads/2026/02/Hit-the-Silk-Second-Edition-Game-Guide-Draft-KS.pdf"},
-    "472022": {"min": 3, "max": 6, "basis": "edition", "source": "https://invisibletypewriter.fun/products/the-dealer"},
-    "434172": {"min": 2, "max": 8, "basis": "edition", "source": "https://roxley.com/collections/board-games/products/excalibur"},
-    "271601": {"min": 5, "max": 11, "basis": "edition", "source": "https://funtails.de/en/feed-the-kraken/"},
-    "340834": {"min": 2, "max": 6, "basis": "edition", "source": "https://renegadegamestudios.com/gravwell/"},
-    "233994": {"min": 3, "max": 8, "basis": "edition", "source": "https://www.amazon.com/Buffalo-Games-Sunken-Sailor-Drawing/dp/B076XL3ND4"},
-    "345266": {"min": 1, "max": 4, "basis": "edition", "source": "https://slugfestgames.com/tales-from-the-rdi/"},
-    "342070": {"min": 2, "max": 4, "basis": "edition", "source": "https://restorationgames.com/wp-content/uploads/2023/11/TRV-Base-Game-Rulebook.pdf"},
-    "9220": {"min": 3, "max": 10, "basis": "edition", "source": "https://blog.amigo-spiele.de/content/ap/rule/04900-GB-AmigoRule.pdf"},
-    "218178": {"basis": "base", "label": "Base game: 2–8", "source": "https://www.matagot.com/en/strategy-games/133-captain-sonar.html"}
+    "13": {
+      "min": 3,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "50": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "71": {
+      "min": 2,
+      "max": 7,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "74": {
+      "min": 4,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "105": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "171": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "177": {
+      "min": 2,
+      "max": 8,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "181": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "320": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "398": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "432": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "822": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "917": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "1111": {
+      "min": 4,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "1234": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "1269": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "1298": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "1515": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "1561": {
+      "min": 3,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "1927": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "2058": {
+      "min": 2,
+      "max": 8,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "2223": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "2381": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "2397": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "2807": {
+      "min": 5,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "3943": {
+      "min": 3,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "4324": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "4492": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "4789": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "4853": {
+      "min": 2,
+      "max": 9,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "5048": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "5432": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "5467": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "5659": {
+      "min": 2,
+      "max": 24,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "5749": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "5849": {
+      "min": 2,
+      "max": 12,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license"
+    },
+    "5894": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "5895": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "5917": {
+      "min": 2,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "6249": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "6606": {
+      "min": 3,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "6932": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "8432": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "8633": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "9209": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "9220": {
+      "min": 3,
+      "max": 10,
+      "basis": "edition",
+      "source": "https://blog.amigo-spiele.de/content/ap/rule/04900-GB-AmigoRule.pdf"
+    },
+    "9851": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "10547": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "12491": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "16992": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "18755": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "19643": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "20437": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "22361": {
+      "min": 2,
+      "max": 5,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "23049": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "24310": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "24318": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "25669": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "28018": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "30549": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "36218": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "36611": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "38026": {
+      "min": 3,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "38067": {
+      "min": 2,
+      "max": 4,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license"
+    },
+    "39463": {
+      "min": 3,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "40692": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "41114": {
+      "min": 5,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "41833": {
+      "min": 3,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "41835": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "43443": {
+      "min": 1,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "46213": {
+      "min": 4,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "50381": {
+      "min": 4,
+      "max": 30,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "50750": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "54043": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "57072": {
+      "min": 2,
+      "max": 5,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "61902": {
+      "min": 4,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "68448": {
+      "min": 2,
+      "max": 7,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "69789": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "70323": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "70919": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "77423": {
+      "min": 1,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "80028": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "88922": {
+      "min": 3,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "91534": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "91872": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "92415": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "92828": {
+      "min": 3,
+      "max": 12,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "95064": {
+      "min": 1,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "98085": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "102104": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "104590": {
+      "min": 1,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "107529": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "108784": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "110327": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "115105": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "117793": {
+      "min": 2,
+      "max": 5,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "122294": {
+      "min": 1,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "124172": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "126703": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "127067": {
+      "min": 2,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "127127": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "127784": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "128174": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "128882": {
+      "min": 5,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "129090": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "129437": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "129556": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "129622": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "130899": {
+      "min": 3,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "130912": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "131260": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "131357": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "131835": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "133473": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "134342": {
+      "min": 2,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "138788": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "141320": {
+      "min": 2,
+      "max": 5,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "141572": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "143741": {
+      "min": 3,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "144325": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "146021": {
+      "min": 1,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "147020": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "147183": {
+      "min": 2,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "147949": {
+      "min": 3,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "148228": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "151347": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "151464": {
+      "min": 2,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "153517": {
+      "min": 2,
+      "max": 4,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license"
+    },
+    "155426": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "155708": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "155969": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "156129": {
+      "min": 4,
+      "max": 12,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "157427": {
+      "min": 2,
+      "max": 4,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "157969": {
+      "min": 3,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "160477": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "160499": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "160851": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "163166": {
+      "min": 3,
+      "max": 7,
+      "source": "https://beziergames.com/products/daybreak",
+      "basis": "edition",
+      "license": "official"
+    },
+    "163412": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "163967": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "167791": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "169784": {
+      "min": 1,
+      "max": 6,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "171090": {
+      "min": 2,
+      "max": 3,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "171131": {
+      "min": 2,
+      "max": 8,
+      "basis": "edition",
+      "source": "https://www.matagot.com/en/strategy-games/133-captain-sonar.html"
+    },
+    "172225": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "172287": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "172540": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "172933": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "173346": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "174095": {
+      "min": 2,
+      "max": 4,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license",
+      "expansion": true
+    },
+    "174430": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "175739": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "178900": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "179275": {
+      "min": 1,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "180974": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "181763": {
+      "min": 2,
+      "max": 4,
+      "source": "https://raw.githubusercontent.com/ThaWeatherman/scrapers/master/boardgamegeek/games.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "no stated license"
+    },
+    "182351": {
+      "min": 3,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "182631": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "182865": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "186265": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "186442": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "187801": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "190409": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "191189": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "192291": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "192638": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "194607": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "195314": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "198773": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "199042": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "199561": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "199792": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "200083": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "200511": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "201825": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "201921": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "204135": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "204583": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "205125": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "205322": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "206508": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "210040": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "211534": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "213788": {
+      "min": 1,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/threnjen/board-games-database-from-boardgamegeek?select=games.csv",
+      "basis": "dataset",
+      "asOf": "2022-01-17",
+      "license": "CC BY-SA 3.0"
+    },
+    "215341": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "216439": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "217372": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "218178": {
+      "basis": "base",
+      "label": "Base game: 2–8",
+      "source": "https://www.matagot.com/en/strategy-games/133-captain-sonar.html"
+    },
+    "218333": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "218376": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "218460": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "220775": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "223740": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "223750": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "224037": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "224821": {
+      "min": 1,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "225694": {
+      "min": 3,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "226501": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "228660": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "229491": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "231696": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "232250": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "232405": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "232595": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "232831": {
+      "min": 3,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "232944": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "233262": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "233354": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "233994": {
+      "min": 3,
+      "max": 8,
+      "basis": "edition",
+      "source": "https://www.amazon.com/Buffalo-Games-Sunken-Sailor-Drawing/dp/B076XL3ND4"
+    },
+    "234190": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "235451": {
+      "min": 4,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "239807": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "241451": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "242684": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "244271": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "244536": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "246701": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "249816": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "249821": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "253664": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "254189": {
+      "min": 3,
+      "max": 7,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "254193": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "254640": {
+      "min": 3,
+      "max": 7,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "254708": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "255293": {
+      "min": 3,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "255907": {
+      "min": 1,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "256226": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "256313": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "256382": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "256669": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "256713": {
+      "min": 1,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "257056": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "257283": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "260605": {
+      "min": 3,
+      "max": 8,
+      "source": "https://www.lookout-spiele.de/en/games/camelup.html",
+      "basis": "edition",
+      "license": "official"
+    },
+    "260785": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "260786": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "260942": {
+      "min": 2,
+      "max": 7,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "262547": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "264220": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "265736": {
+      "min": 1,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "266507": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "270633": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "271064": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "271460": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "271518": {
+      "min": 2,
+      "max": 3,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "271601": {
+      "min": 5,
+      "max": 11,
+      "basis": "edition",
+      "source": "https://funtails.de/en/feed-the-kraken/"
+    },
+    "272409": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "272533": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "273336": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "274533": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "274960": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "276182": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "277017": {
+      "min": 2,
+      "max": 20,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "277154": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "277458": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "283155": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "284083": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "287821": {
+      "min": 4,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "291508": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "291794": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/threnjen/board-games-database-from-boardgamegeek?select=games.csv",
+      "basis": "dataset",
+      "asOf": "2022-01-17",
+      "license": "CC BY-SA 3.0"
+    },
+    "295924": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "296108": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "298060": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "299252": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "307305": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "310203": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/threnjen/board-games-database-from-boardgamegeek?select=games.csv",
+      "basis": "dataset",
+      "asOf": "2022-01-17",
+      "license": "CC BY-SA 3.0"
+    },
+    "310789": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "312484": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "312618": {
+      "min": 1,
+      "max": 7,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "312786": {
+      "min": 2,
+      "max": 12,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "313070": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "314421": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "315882": {
+      "min": 3,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "321539": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "322622": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "324413": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "327371": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "327797": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "328555": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "329230": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "330097": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "331685": {
+      "min": 3,
+      "max": 6,
+      "basis": "edition",
+      "source": "https://escapeplanboardgames.com/wp-content/uploads/2026/02/Hit-the-Silk-Second-Edition-Game-Guide-Draft-KS.pdf"
+    },
+    "331787": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "335275": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "335609": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "336986": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "338960": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "339031": {
+      "min": 2,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "340834": {
+      "min": 2,
+      "max": 6,
+      "basis": "edition",
+      "source": "https://renegadegamestudios.com/gravwell/"
+    },
+    "341027": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "342070": {
+      "min": 2,
+      "max": 4,
+      "basis": "edition",
+      "source": "https://restorationgames.com/wp-content/uploads/2023/11/TRV-Base-Game-Rulebook.pdf"
+    },
+    "344814": {
+      "min": 3,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "345266": {
+      "min": 1,
+      "max": 4,
+      "basis": "edition",
+      "source": "https://slugfestgames.com/tales-from-the-rdi/"
+    },
+    "346296": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "347029": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "348096": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "348406": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info.csv",
+      "basis": "dataset",
+      "asOf": "collection date not stated",
+      "license": "BGG terms"
+    },
+    "348602": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "350755": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "352997": {
+      "min": 2,
+      "max": 10,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "355483": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "358858": {
+      "min": 3,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "359502": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "361208": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "361552": {
+      "min": 3,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "364073": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "364266": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "366310": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "366495": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "366790": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "372973": {
+      "min": 6,
+      "max": 16,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "374173": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/mattadamhouser/ranked-board-game-data-from-boardgamegeek?select=basic_data_2023.csv",
+      "basis": "dataset",
+      "asOf": "2023",
+      "license": "CC0"
+    },
+    "374502": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "375651": {
+      "min": 3,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "380439": {
+      "min": 2,
+      "max": 8,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "383010": {
+      "min": 2,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "383579": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "386831": {
+      "min": 2,
+      "max": 3,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "387514": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "391834": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "392694": {
+      "min": 3,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "394889": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "396607": {
+      "min": 3,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "399088": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "400314": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "402111": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "402245": {
+      "min": 3,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "403494": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "406652": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "407297": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "412230": {
+      "min": 3,
+      "max": 7,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "413085": {
+      "min": 2,
+      "max": 15,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "416266": {
+      "min": 1,
+      "max": 4,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "416850": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "421006": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "422159": {
+      "min": 3,
+      "max": 8,
+      "source": "https://bang.dvgiochi.com/prod.php?id=24&lang=en",
+      "basis": "edition",
+      "license": "official"
+    },
+    "422484": {
+      "min": 2,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "423850": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "425005": {
+      "min": 1,
+      "max": 2,
+      "source": "https://www.kaggle.com/datasets/jvanelteren/boardgamegeek-reviews?select=games_detailed_info2025.csv",
+      "basis": "dataset",
+      "asOf": "2025 filename, collection date not stated",
+      "license": "BGG terms"
+    },
+    "434172": {
+      "min": 2,
+      "max": 8,
+      "basis": "edition",
+      "source": "https://roxley.com/collections/board-games/products/excalibur"
+    },
+    "434654": {
+      "min": 2,
+      "max": 2,
+      "source": "https://store.asmodee.com/products/toy-battle",
+      "basis": "edition",
+      "license": "official"
+    },
+    "434906": {
+      "min": 2,
+      "max": 2,
+      "source": "https://scorpionmasque.com/en/tag-team",
+      "basis": "edition",
+      "license": "official"
+    },
+    "437705": {
+      "min": 1,
+      "max": 5,
+      "source": "https://www.ravensburger.us/en-US/products/games/board-games/horrified-dungeons-dragons--24754",
+      "basis": "edition",
+      "license": "official"
+    },
+    "439305": {
+      "min": 1,
+      "max": 2,
+      "source": "https://cardboardalchemy.com/flamecraft-duals/",
+      "basis": "edition",
+      "license": "official"
+    },
+    "441706": {
+      "min": 2,
+      "max": 5,
+      "basis": "edition",
+      "source": "https://store.asmodee.com/products/quacks-all-in-edition"
+    },
+    "446497": {
+      "min": 2,
+      "basis": "open",
+      "label": "2–9+",
+      "source": "https://www.cmyk.games/products/hot-streak",
+      "license": "official"
+    },
+    "454103": {
+      "min": 2,
+      "max": 6,
+      "source": "https://www.cmyk.games/products/magical-athlete",
+      "basis": "edition",
+      "license": "official"
+    },
+    "472022": {
+      "min": 3,
+      "max": 6,
+      "basis": "edition",
+      "source": "https://invisibletypewriter.fun/products/the-dealer"
+    }
   }
 }

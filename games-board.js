@@ -4,15 +4,24 @@
   window.__GAMES_BOARD = true;
   if (!/\/games\/?$/.test(location.pathname)) return;
   var CODE_KEY = "retreat-edit-code";
-  var root = document.querySelector("main .wrap") || document.querySelector("main");
-  if (!root) return;
   var host = document.createElement("section");
   host.id = "brought-summary";
   host.className = "stack";
   host.innerHTML = '<h2 id="brought-heading">Games being brought</h2><p class="display" id="brought-total">Loading the shelf.</p><p class="hint">Each number is one shelf entry: a peep who is bringing that game. Two peeps bringing the same title count as two. Pending and declined requests are not included.</p><ul id="brought-by-peep"></ul><h2 id="requested-heading">Requested</h2><p class="hint" id="requested-status">Loading requests.</p><div id="requested-list" class="stack"></div>';
-  var lede = root.querySelector(".lede");
-  if (lede) lede.insertAdjacentElement("afterend", host);
-  else root.appendChild(host);
+  function place() {
+    var current = document.querySelector("main .wrap") || document.querySelector("main");
+    if (!current) return false;
+    var link = document.getElementById("requests-link");
+    var lede = current.querySelector(".lede");
+    var anchor = link && current.contains(link) ? link : lede;
+    if (anchor && anchor.parentNode) {
+      if (host.previousElementSibling !== anchor) anchor.insertAdjacentElement("afterend", host);
+    } else if (!current.contains(host)) {
+      current.appendChild(host);
+    }
+    return host.isConnected;
+  }
+  place();
 
   function headers(extra) {
     var result = { accept: "application/json" };
@@ -48,8 +57,8 @@
     names.sort(function (a, b) { return b.count - a.count || a.name.localeCompare(b.name); });
     var total = games.length;
     var sum = names.reduce(function (n, person) { return n + person.count; }, 0);
-    document.getElementById("brought-total").textContent = total + (total === 1 ? " game being brought" : " games being brought");
-    var list = document.getElementById("brought-by-peep");
+    host.querySelector("#brought-total").textContent = total + (total === 1 ? " game being brought" : " games being brought");
+    var list = host.querySelector("#brought-by-peep");
     list.replaceChildren();
     names.forEach(function (person) {
       var item = document.createElement("li");
@@ -66,8 +75,8 @@
   function paintRequests(payload, you, decisionsLive) {
     var requests = (payload && payload.requests) || [];
     var open = requests.filter(function (request) { return pendingOwners(request).length > 0; });
-    var status = document.getElementById("requested-status");
-    var list = document.getElementById("requested-list");
+    var status = host.querySelector("#requested-status");
+    var list = host.querySelector("#requested-list");
     list.replaceChildren();
     if (!decisionsLive) {
       status.textContent = "Requests can be seen here. Owner bring and decline choices are not on the live board yet.";
@@ -123,12 +132,12 @@
       body: JSON.stringify({ decision: decision })
     }).then(function (response) {
       if (response.status === 404) {
-        document.getElementById("requested-status").textContent = "Owner choices are not on the live board yet.";
+        host.querySelector("#requested-status").textContent = "Owner choices are not on the live board yet.";
         return null;
       }
       return response.json().then(function (data) {
         if (!response.ok) {
-          document.getElementById("requested-status").textContent = data.error || "That choice did not save.";
+          host.querySelector("#requested-status").textContent = data.error || "That choice did not save.";
           return null;
         }
         location.reload();
@@ -136,10 +145,12 @@
     });
   }
   function load() {
+    place();
     return Promise.all([
       api("/api/board").then(function (response) { return response.ok ? response.json() : null; }),
       api("/api/requests").then(function (response) { return response.ok ? response.json() : { requests: [] }; })
     ]).then(function (parts) {
+      place();
       var board = parts[0];
       var requests = parts[1];
       if (board) paintCount(board);
@@ -147,15 +158,14 @@
       var decisionsLive = !sample || Array.isArray(sample.decisions);
       paintRequests(requests, board && board.you, decisionsLive && (requests.requests || []).every(function (request) { return Array.isArray(request.owners); }));
     }).catch(function () {
-      document.getElementById("brought-total").textContent = "The shelf count did not load.";
+      var total = host.querySelector("#brought-total");
+      if (total) total.textContent = "The shelf count did not load.";
     });
   }
   load();
-  var timer = 0;
   new MutationObserver(function (records) {
-    var inside = records.every(function (record) { return host.contains(record.target); });
+    var inside = records.every(function (record) { return record.target === host || host.contains(record.target); });
     if (inside) return;
-    clearTimeout(timer);
-    timer = setTimeout(load, 400);
-  }).observe(root, { childList: true, subtree: true });
+    place();
+  }).observe(document.documentElement, { childList: true, subtree: true });
 })();

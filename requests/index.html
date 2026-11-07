@@ -52,6 +52,7 @@
 </select>
 </div>
 <p id="owned-meta" class="hint">Loading the snapshot.</p>
+<p id="player-sources" class="hint">Player counts are individual facts. Edition checks on a publisher page have no snapshot year. Other ranges are older public snapshots, not a current publisher guarantee: Matt Adam Houser, Ranked Board Game Data from BoardGameGeek, CC0, 2023; Jen Wadkins, Board Games Database from BoardGameGeek, CC BY-SA 3.0, updated January 17, 2022; Jesse van Elteren, BoardGameGeek reviews dataset, where 2025 is a filename and the collection date is not stated, used under BoardGameGeek’s terms rather than a public-domain grant. Sean Beck’s public games.csv has no stated license and no collection date; only its minimum and maximum are stored. An expansion count needs its base game. A maximum of 99 was left unverified. Hot Streak is 2–9+, with no hard maximum.</p>
 <p id="owned-count" class="hint" role="status"></p>
 <div id="owned-list" class="stack"></div>
 </div>
@@ -99,8 +100,10 @@
       meta.className = "hint";
       var players = playersById[String(game.bggId)];
       var playersText = "Players: Not verified";
-      if (players && players.basis === "base") playersText = "Players: " + players.label;
+      if (players && (players.basis === "base" || players.basis === "open" || (players.label && players.max == null))) playersText = "Players: " + players.label;
       else if (players && players.min != null && players.max != null) playersText = "Players: " + players.min + "–" + players.max;
+      if (players && players.expansion && playersText !== "Players: Not verified") playersText += " with the required base game, not a standalone count";
+      if (players && players.asOf && playersText !== "Players: Not verified") playersText += " (as of " + players.asOf + ")";
       var decisions = "";
       var related = saved.filter(function (row) { return row.bggId === game.bggId; });
       if (related.length) {
