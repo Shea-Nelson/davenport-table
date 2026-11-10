@@ -195,7 +195,6 @@
         controls.dir.textContent = state.dir === "asc" ? "A to Z" : "Z to A";
         controls.dir.setAttribute("aria-label", state.dir === "asc" ? "Sort ascending" : "Sort descending");
       }
-      syncTheme(controls.theme);
     }
     function choose(key, numeric) {
       return function (event) {
@@ -224,20 +223,8 @@
     });
     if (controls.min) controls.min.addEventListener("input", function () { state.min = readNumber(controls.min); paint(); onChange(); });
     if (controls.max) controls.max.addEventListener("input", function () { state.max = readNumber(controls.max); paint(); onChange(); });
-    if (controls.theme) controls.theme.addEventListener("click", function () {
-      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("dt-theme", next); } catch (error) {}
-      syncTheme(controls.theme);
-    });
     paint();
     return paint;
-  }
-  function syncTheme(button) {
-    if (!button) return;
-    var dark = document.documentElement.getAttribute("data-theme") === "dark";
-    button.setAttribute("aria-pressed", String(dark));
-    button.textContent = dark ? "Light mode" : "Dark mode";
   }
   function renderCard(options) {
     var item = options.model || emptyModel();

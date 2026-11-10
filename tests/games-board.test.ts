@@ -109,19 +109,8 @@ test("requests page labels dataset counts, expansions, and open-ended Hot Streak
     await waitFor(page, "[...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.startsWith('Excalibur'))");
     const best = await page.eval("[...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.startsWith('Hot Streak'))");
     assert.equal(best, true);
-    const before = await page.eval("document.documentElement.getAttribute('data-theme') || 'light'");
-    await page.eval("document.getElementById('theme-toggle').click()");
-    const after = await page.eval("document.documentElement.getAttribute('data-theme')");
-    assert.notEqual(after, before);
-    await page.eval("document.documentElement.setAttribute('data-theme','dark')");
-    const colors = await page.eval(`(() => {
-      const card = document.querySelector('.dt-card');
-      const num = card.querySelector('.num');
-      return { bg: getComputedStyle(card).backgroundColor, fg: getComputedStyle(num).color, chip: getComputedStyle(document.querySelector('#plays-with button[aria-pressed="true"]')).color, chipBg: getComputedStyle(document.querySelector('#plays-with button[aria-pressed="true"]')).backgroundColor };
-    })()`);
-    assert.notEqual(colors.bg, colors.fg);
-    assert.ok(luminance(colors.fg) > luminance(colors.bg));
-    assert.ok(luminance(colors.chip) < luminance(colors.chipBg));
+    assert.equal(await page.eval("document.getElementById('theme-toggle')"), null);
+    assert.equal(await page.eval("document.documentElement.getAttribute('data-theme')"), null);
   } finally {
     chrome.kill("SIGKILL");
     site?.kill("SIGKILL");
@@ -202,15 +191,6 @@ window.fetch = function (url, opts) {
   return orig(url, opts);
 };
 `;
-
-function luminance(color: string) {
-  const channels = (color.match(/[\d.]+/g) || ["0", "0", "0"]).slice(0, 3).map(Number);
-  const linear = channels.map((channel) => {
-    const value = channel / 255;
-    return value <= 0.03928 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
-  });
-  return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
-}
 
 async function openPage(port = 9261) {
   const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

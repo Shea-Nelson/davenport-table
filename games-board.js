@@ -3,11 +3,26 @@
   if (window.__GAMES_BOARD) return;
   window.__GAMES_BOARD = true;
   if (!/\/games\/?$/.test(location.pathname)) return;
+  if (document.body) document.body.classList.add("dt-shelf-page");
+  if (!document.querySelector("link[data-shelf-cards]")) {
+    var sheet = document.createElement("link");
+    sheet.rel = "stylesheet";
+    sheet.href = "/davenport-table/shelf-cards.css";
+    sheet.dataset.shelfCards = "1";
+    document.head.appendChild(sheet);
+  }
+  if (!window.ShelfCards && !document.querySelector("script[data-shelf-cards-js]")) {
+    var facts = document.createElement("script");
+    facts.src = "/davenport-table/shelf-cards.js";
+    facts.async = false;
+    facts.dataset.shelfCardsJs = "1";
+    document.body.appendChild(facts);
+  }
   var CODE_KEY = "retreat-edit-code";
   var host = document.createElement("section");
   host.id = "brought-summary";
   host.className = "stack";
-  host.innerHTML = '<h2 id="brought-heading">Games being brought</h2><p class="display" id="brought-total">Loading the shelf.</p><p class="hint">Each number is one shelf entry: a peep who is bringing that game. Two peeps bringing the same title count as two. Pending and declined requests are not included.</p><ul id="brought-by-peep"></ul><div class="dt-toolbar" id="games-toolbar"><div class="dt-toolbar__row"><label class="dt-search"><span class="sr-only">Search the shelf</span><input id="gb-search" type="search" placeholder="Search titles" autocomplete="off"></label><label class="sr-only" for="gb-sort">Sort</label><select id="gb-sort"><option value="name">Name</option><option value="players">Players</option><option value="time">Play time</option><option value="weight">Weight</option><option value="owner">Owner</option></select><button type="button" id="gb-dir" class="dt-dir">A to Z</button><label for="gb-owner">Brought by</label><select id="gb-owner"><option value="">Anyone</option></select><button type="button" id="gb-theme" class="dt-theme">Dark mode</button></div><div class="dt-players"><span class="dt-players__label" id="gb-plays-label">Plays with</span><div class="dt-chips" id="gb-plays" role="group" aria-labelledby="gb-plays-label"></div></div><div class="dt-players"><span class="dt-players__label" id="gb-best-label">Best with</span><div class="dt-chips" id="gb-best" role="group" aria-labelledby="gb-best-label"></div></div><div class="dt-range"><span>Published range</span><label>Min at least <input id="gb-min" type="number" min="1" max="20" inputmode="numeric"></label><label>Max at most <input id="gb-max" type="number" min="1" max="20" inputmode="numeric"></label></div><div class="dt-players"><span class="dt-players__label" id="gb-time-label">Play time</span><div class="dt-chips" id="gb-time" role="group" aria-labelledby="gb-time-label"></div></div><div class="dt-players"><span class="dt-players__label" id="gb-weight-label">Weight</span><div class="dt-chips" id="gb-weight" role="group" aria-labelledby="gb-weight-label"></div></div><p class="hint dt-help">Plays with, best with, and the min/max range use verified counts only. A game without a verified count stays out of those filters. Best with is the BoardGameGeek community poll when Shea’s Game Shelf already had that id.</p></div><div id="shelf-cards" class="dt-grid"></div><h2 id="requested-heading">Requested</h2><p class="hint" id="requested-status">Loading requests.</p><div id="requested-list" class="dt-grid"></div>';
+  host.innerHTML = '<h2 id="brought-heading">Games being brought</h2><p class="display" id="brought-total">Loading the shelf.</p><p class="hint">Each number is one shelf entry: a peep who is bringing that game. Two peeps bringing the same title count as two. Pending and declined requests are not included.</p><ul id="brought-by-peep"></ul><div class="dt-toolbar" id="games-toolbar"><div class="dt-toolbar__row"><label class="dt-search"><span class="sr-only">Search the shelf</span><input id="gb-search" type="search" placeholder="Search titles" autocomplete="off"></label><label class="sr-only" for="gb-sort">Sort</label><select id="gb-sort"><option value="name">Name</option><option value="players">Players</option><option value="time">Play time</option><option value="weight">Weight</option><option value="owner">Owner</option></select><button type="button" id="gb-dir" class="dt-dir">A to Z</button><label for="gb-owner">Brought by</label><select id="gb-owner"><option value="">Anyone</option></select></div><div class="dt-players"><span class="dt-players__label" id="gb-plays-label">Plays with</span><div class="dt-chips" id="gb-plays" role="group" aria-labelledby="gb-plays-label"></div></div><div class="dt-players"><span class="dt-players__label" id="gb-best-label">Best with</span><div class="dt-chips" id="gb-best" role="group" aria-labelledby="gb-best-label"></div></div><div class="dt-range"><span>Published range</span><label>Min at least <input id="gb-min" type="number" min="1" max="20" inputmode="numeric"></label><label>Max at most <input id="gb-max" type="number" min="1" max="20" inputmode="numeric"></label></div><div class="dt-players"><span class="dt-players__label" id="gb-time-label">Play time</span><div class="dt-chips" id="gb-time" role="group" aria-labelledby="gb-time-label"></div></div><div class="dt-players"><span class="dt-players__label" id="gb-weight-label">Weight</span><div class="dt-chips" id="gb-weight" role="group" aria-labelledby="gb-weight-label"></div></div><p class="hint dt-help">Plays with, best with, and the min/max range use verified counts only. A game without a verified count stays out of those filters. Best with is the BoardGameGeek community poll when Shea’s Game Shelf already had that id.</p></div><div id="shelf-cards" class="dt-grid"></div><h2 id="requested-heading">Requested</h2><p class="hint" id="requested-status">Loading requests.</p><div id="requested-list" class="dt-grid"></div>';
   var state = { plays: null, best: null, sort: "name", dir: "asc", min: null, max: null, time: null, weight: null, owner: "", q: "" };
   var lastBoard = null;
   var lastRequests = null;
@@ -243,8 +258,7 @@
       sort: host.querySelector("#gb-sort"),
       dir: host.querySelector("#gb-dir"),
       min: host.querySelector("#gb-min"),
-      max: host.querySelector("#gb-max"),
-      theme: host.querySelector("#gb-theme")
+      max: host.querySelector("#gb-max")
     }, state, repaint);
     host.querySelector("#gb-search").addEventListener("input", function (event) {
       state.q = event.target.value.trim().toLowerCase();
