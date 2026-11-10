@@ -118,7 +118,7 @@
     list.replaceChildren();
     var rows = ((board && board.games) || []).map(function (game) {
       var match = window.ShelfCards.matchTitle(game.title);
-      return { shelf: game, model: window.ShelfCards.model(match) };
+      return { shelf: game, model: window.ShelfCards.shelfModel(game.title, match) };
     }).filter(function (row) {
       return wanted(row.shelf.title, row.model, [row.shelf.broughtBy]);
     });

@@ -16,6 +16,7 @@
   var exact = {};
   var cleaned = {};
   var byId = {};
+  var titleCovers = {};
 
   function norm(value) {
     return String(value || "").toLowerCase().replace(/\s*\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
@@ -66,6 +67,7 @@
       result.weight = facts.weight == null ? null : facts.weight;
       result.year = facts.year == null ? null : facts.year;
       result.image = facts.image || null;
+      result.coverType = facts.coverType || (facts.image ? "box" : null);
     }
     if (!row) return result;
     result.asOf = row.asOf || "";
@@ -236,7 +238,7 @@
     if (item.image) {
       var image = document.createElement("img");
       image.src = item.image;
-      image.alt = "Box art for " + options.title;
+      image.alt = item.coverType === "stand-in" ? "Title card for " + options.title + ". Not a photo of the box." : "Box art for " + options.title;
       image.decoding = "async";
       image.loading = options.eager ? "eager" : "lazy";
       image.addEventListener("error", function () {
@@ -344,12 +346,33 @@
   function matchById(id) {
     return byId[id] || byId[Number(id)] || null;
   }
+  function editionToken(title) {
+    var text = String(title || "").toLowerCase();
+    if (/2nd|second edition/.test(text)) return "2";
+    if (/3rd|third edition/.test(text)) return "3";
+    if (/first edition/.test(text)) return "1";
+    return "";
+  }
+  function shelfModel(title, match) {
+    var item = model(match);
+    var shelfToken = editionToken(title);
+    var catalogToken = match ? editionToken(match.title) : "";
+    if (shelfToken && shelfToken !== catalogToken) item.image = null;
+    var extra = titleCovers[title];
+    if (extra && extra.image) {
+      item.image = extra.image;
+      item.coverType = extra.coverType || "box";
+    }
+    return item;
+  }
   function loadSupport() {
     return Promise.all([
       fetch("/davenport-table/collections/players.json").then(function (response) { return response.ok ? response.json() : { games: {} }; }),
       fetch("/davenport-table/collections/shelf-facts.json").then(function (response) { return response.ok ? response.json() : { games: {} }; })
     ]).then(function (parts) {
-      return { players: (parts[0] && parts[0].games) || {}, facts: (parts[1] && parts[1].games) || {} };
+      var doc = parts[1] || {};
+      titleCovers = doc.titleCovers || {};
+      return { players: (parts[0] && parts[0].games) || {}, facts: doc.games || {} };
     });
   }
   function loadCatalog() {
@@ -363,6 +386,7 @@
     ingest: ingest,
     matchTitle: matchTitle,
     matchById: matchById,
+    shelfModel: shelfModel,
     model: model,
     sentence: sentence,
     fits: fits,
