@@ -186,10 +186,34 @@ window.RETREAT_BOARD = "ready";
     lede.insertAdjacentElement("afterend", p);
   }
 
+  function shelfPage() {
+    if (!/\/(games|requests)\/?$/.test(location.pathname)) return;
+    if (document.body) document.body.classList.add("dt-shelf-page");
+    try {
+      var saved = localStorage.getItem("dt-theme");
+      if (!saved && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) saved = "dark";
+      if (saved && !document.documentElement.getAttribute("data-theme")) document.documentElement.setAttribute("data-theme", saved);
+    } catch (error) {}
+    if (!document.querySelector("link[data-shelf-cards]")) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "/davenport-table/shelf-cards.css";
+      link.dataset.shelfCards = "1";
+      document.head.appendChild(link);
+    }
+  }
   function gamesBoard() {
     if (!/\/games\/?$/.test(location.pathname) || document.querySelector("script[data-games-board]")) return;
+    if (!document.querySelector("script[data-shelf-cards-js]")) {
+      var facts = document.createElement("script");
+      facts.src = "/davenport-table/shelf-cards.js";
+      facts.async = false;
+      facts.dataset.shelfCardsJs = "1";
+      document.body.appendChild(facts);
+    }
     var script = document.createElement("script");
     script.src = "/davenport-table/games-board.js";
+    script.async = false;
     script.dataset.gamesBoard = "1";
     document.body.appendChild(script);
   }
@@ -203,6 +227,7 @@ window.RETREAT_BOARD = "ready";
     nav();
     eats();
     gamesLink();
+    shelfPage();
     gamesBoard();
   }
   apply();

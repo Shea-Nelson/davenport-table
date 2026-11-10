@@ -32,6 +32,13 @@ test("games page keeps the requested section after the real page hydrates", asyn
     assert.deepEqual(shea.buttons["Only Grease Owns"], []);
     assert.match(shea.waiting["Tales from the Red Dragon Inn"], /Still waiting on Shea/);
     assert.match(shea.waiting["Only Grease Owns"], /Still waiting on Grease/);
+    const shelf = await page.eval("document.getElementById('shelf-cards').innerText");
+    assert.match(shelf, /Captain Sonar/);
+    assert.match(shelf, /2–8/);
+    assert.match(shelf, /Best 8/);
+    assert.match(shelf, /Best with a referee/);
+    await page.eval("document.querySelector('#gb-plays button[data-v=\"4\"]').click()");
+    await waitFor(page, "!document.getElementById('shelf-cards').innerText.includes('Another Shea') && document.getElementById('shelf-cards').innerText.includes('Captain Sonar')");
     await page.eval("document.querySelector('#requested-list article h3').parentElement.querySelector('button').click()");
     await waitFor(page, "sessionStorage.getItem('fixture-post')");
     const posted = await page.eval("JSON.parse(sessionStorage.getItem('fixture-post'))");
@@ -44,7 +51,7 @@ test("games page keeps the requested section after the real page hydrates", asyn
     const mel = await page.eval(snapshot);
     assert.equal(mel.connected, true);
     assert.equal(mel.buttonCount, 0);
-    assert.deepEqual(mel.titles, ["Captain Sonar", "Tales from the Red Dragon Inn", "Only Grease Owns"]);
+    assert.deepEqual(mel.titles, ["Captain Sonar", "Only Grease Owns", "Tales from the Red Dragon Inn"]);
   } finally {
     chrome.kill("SIGKILL");
     site?.kill("SIGKILL");
@@ -88,6 +95,33 @@ test("requests page labels dataset counts, expansions, and open-ended Hot Streak
     assert.match(credit, /CC0/);
     assert.match(credit, /CC BY-SA 3\.0/);
     assert.match(credit, /99/);
+    await page.eval("document.querySelector('#plays-with button[data-v=\"4\"]').click()");
+    await waitFor(page, "document.querySelectorAll('#owned-list article').length < 483");
+    const filtered = await page.eval(`({
+      buried: [...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.includes('Buried Secrets')),
+      hot: [...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.startsWith('Hot Streak')),
+      excalibur: [...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.startsWith('Excalibur'))
+    })`);
+    assert.equal(filtered.buried, false);
+    assert.equal(filtered.hot, true);
+    assert.equal(filtered.excalibur, true);
+    await page.eval("document.querySelector('#best-with button[data-v=\"5\"]').click()");
+    await waitFor(page, "[...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.startsWith('Excalibur'))");
+    const best = await page.eval("[...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.startsWith('Hot Streak'))");
+    assert.equal(best, true);
+    const before = await page.eval("document.documentElement.getAttribute('data-theme') || 'light'");
+    await page.eval("document.getElementById('theme-toggle').click()");
+    const after = await page.eval("document.documentElement.getAttribute('data-theme')");
+    assert.notEqual(after, before);
+    await page.eval("document.documentElement.setAttribute('data-theme','dark')");
+    const colors = await page.eval(`(() => {
+      const card = document.querySelector('.dt-card');
+      const num = card.querySelector('.num');
+      return { bg: getComputedStyle(card).backgroundColor, fg: getComputedStyle(num).color, chip: getComputedStyle(document.querySelector('#plays-with button[aria-pressed="true"]')).color, chipBg: getComputedStyle(document.querySelector('#plays-with button[aria-pressed="true"]')).backgroundColor };
+    })()`);
+    assert.notEqual(colors.bg, colors.fg);
+    assert.ok(luminance(colors.fg) > luminance(colors.bg));
+    assert.ok(luminance(colors.chip) < luminance(colors.chipBg));
   } finally {
     chrome.kill("SIGKILL");
     site?.kill("SIGKILL");
@@ -103,7 +137,7 @@ const snapshot = `(() => {
     const title = article.querySelector("h3").textContent;
     titles.push(title);
     buttons[title] = [...article.querySelectorAll("button")].map((button) => button.textContent);
-    waiting[title] = article.querySelector("p").textContent;
+    waiting[title] = article.querySelector("p.hint").textContent;
   });
   const counts = {};
   document.querySelectorAll("#brought-by-peep li").forEach((item) => {
@@ -168,6 +202,15 @@ window.fetch = function (url, opts) {
   return orig(url, opts);
 };
 `;
+
+function luminance(color: string) {
+  const channels = (color.match(/[\d.]+/g) || ["0", "0", "0"]).slice(0, 3).map(Number);
+  const linear = channels.map((channel) => {
+    const value = channel / 255;
+    return value <= 0.03928 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
+}
 
 async function openPage(port = 9261) {
   const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

@@ -6,9 +6,17 @@
 <title>Owned games · The Davenport Table</title>
 <meta name="robots" content="noindex, nofollow"/>
 <link rel="stylesheet" href="/davenport-table/_next/static/chunks/3f92k8hgoqp7a.css"/>
+<link rel="stylesheet" href="/davenport-table/shelf-cards.css"/>
 <link rel="icon" href="/davenport-table/icon.svg" type="image/svg+xml"/>
+<script>
+try {
+  var savedTheme = localStorage.getItem("dt-theme");
+  if (!savedTheme && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) savedTheme = "dark";
+  if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+} catch (e) {}
+</script>
 </head>
-<body>
+<body class="dt-shelf-page">
 <header class="site-header">
 <a class="skip" href="#content">Skip to content</a>
 <div class="bar">
@@ -30,35 +38,53 @@
 <h1>Games Shea and Grease own</h1>
 <p class="lede">This list is a snapshot of two public BoardGameGeek owned pages. It is not the shelf. Adding a game you are bringing still happens on the Games page after you sign in with your edit code.</p>
 <p class="hint" id="request-status" role="note">Request saving is not live. The board update that would store a request has not been deployed, so nothing on this page is saved.</p>
-<div class="field">
-<label for="owned-search">Search titles</label>
+<div class="dt-toolbar">
+<div class="dt-toolbar__row">
+<label class="dt-search" for="owned-search">Search titles
 <input id="owned-search" type="search" autocomplete="off"/>
-</div>
-<div class="field">
-<label for="owned-owner">Owner</label>
+</label>
+<label for="shelf-sort">Sort
+<select id="shelf-sort">
+<option value="name">Name</option>
+<option value="players">Players</option>
+<option value="time">Play time</option>
+<option value="weight">Weight</option>
+<option value="owner">Owner</option>
+</select>
+</label>
+<button type="button" id="shelf-dir" class="dt-dir">A to Z</button>
+<label for="owned-owner">Owner
 <select id="owned-owner">
 <option value="all">Anyone</option>
 <option value="Shea">Shea</option>
 <option value="Grease">Grease</option>
 <option value="both">Both</option>
 </select>
-</div>
-<div class="field">
-<label for="owned-kind">Kind</label>
+</label>
+<label for="owned-kind">Kind
 <select id="owned-kind">
 <option value="all">Games and expansions</option>
 <option value="game">Games</option>
 <option value="expansion">Expansions</option>
 </select>
+</label>
+<button type="button" id="theme-toggle" class="dt-theme">Dark mode</button>
+</div>
+<div class="dt-players"><span class="dt-players__label" id="plays-label">Plays with</span><div class="dt-chips" id="plays-with" role="group" aria-labelledby="plays-label"></div></div>
+<div class="dt-players"><span class="dt-players__label" id="best-label">Best with</span><div class="dt-chips" id="best-with" role="group" aria-labelledby="best-label"></div></div>
+<div class="dt-range"><span>Published range</span><label>Min at least <input id="min-at-least" type="number" min="1" max="20" inputmode="numeric"/></label><label>Max at most <input id="max-at-most" type="number" min="1" max="20" inputmode="numeric"/></label></div>
+<div class="dt-players"><span class="dt-players__label" id="time-label">Play time</span><div class="dt-chips" id="time-chips" role="group" aria-labelledby="time-label"></div></div>
+<div class="dt-players"><span class="dt-players__label" id="weight-label">Weight</span><div class="dt-chips" id="weight-chips" role="group" aria-labelledby="weight-label"></div></div>
 </div>
 <p id="owned-meta" class="hint">Loading the snapshot.</p>
-<p id="player-sources" class="hint">Player counts are individual facts. Edition checks on a publisher page have no snapshot year. Other ranges are older public snapshots, not a current publisher guarantee: Matt Adam Houser, Ranked Board Game Data from BoardGameGeek, CC0, 2023; Jen Wadkins, Board Games Database from BoardGameGeek, CC BY-SA 3.0, updated January 17, 2022; Jesse van Elteren, BoardGameGeek reviews dataset, where 2025 is a filename and the collection date is not stated, used under BoardGameGeek’s terms rather than a public-domain grant. Sean Beck’s public games.csv has no stated license and no collection date; only its minimum and maximum are stored. An expansion count needs its base game. A maximum of 99 was left unverified. Hot Streak is 2–9+, with no hard maximum.</p>
 <p id="owned-count" class="hint" role="status"></p>
-<div id="owned-list" class="stack"></div>
+<div id="owned-list" class="dt-grid"></div>
+<p id="player-sources" class="hint">Player counts are individual facts. Edition checks on a publisher page have no snapshot year. Other ranges are older public snapshots, not a current publisher guarantee: Matt Adam Houser, Ranked Board Game Data from BoardGameGeek, CC0, 2023; Jen Wadkins, Board Games Database from BoardGameGeek, CC BY-SA 3.0, updated January 17, 2022; Jesse van Elteren, BoardGameGeek reviews dataset, where 2025 is a filename and the collection date is not stated, used under BoardGameGeek’s terms rather than a public-domain grant. Sean Beck’s public games.csv has no stated license and no collection date; only its minimum and maximum are stored. An expansion count needs its base game. A maximum of 99 was left unverified. Hot Streak is 2–9+. Best-at, play time, weight, and box art come from Shea’s Game Shelf only when that snapshot already had the same BoardGameGeek id. Best-at is the BoardGameGeek community poll, not a publisher’s pick. Anything missing stays not verified.</p>
 </div>
 </main>
 <footer class="site-footer"><div class="wrap"><p>The street address of the house is not published.</p></div></footer>
 <script src="/davenport-table/retreat-config.js"></script>
+<script src="/davenport-table/shelf-cards.js"></script>
 <script>
 (function () {
   var list = document.getElementById("owned-list");
@@ -68,7 +94,7 @@
   var owner = document.getElementById("owned-owner");
   var kind = document.getElementById("owned-kind");
   var games = [];
-  var playersById = {};
+  var cardState = ShelfCards.emptyState();
   var live = false;
   var you = null;
   var saved = [];
@@ -81,29 +107,24 @@
     var q = search.value.trim().toLowerCase();
     var who = owner.value;
     var which = kind.value;
-    var shown = 0;
+    var shown = [];
+    games.forEach(function (game) {
+      if (q && game.title.toLowerCase().indexOf(q) === -1) return;
+      if (who === "both" && game.owners.length !== 2) return;
+      if ((who === "Shea" || who === "Grease") && game.owners.indexOf(who) === -1) return;
+      if (which === "game" && game.isExpansion) return;
+      if (which === "expansion" && !game.isExpansion) return;
+      if (!ShelfCards.fits(ShelfCards.model(game), cardState)) return;
+      shown.push(game);
+    });
+    shown = ShelfCards.sort(shown, cardState, {
+      name: function (game) { return game.title; },
+      owner: function (game) { return ownersLabel(game.owners); },
+      model: function (game) { return ShelfCards.model(game); }
+    });
     list.replaceChildren();
-    var frag = document.createDocumentFragment();
-    for (var i = 0; i < games.length; i += 1) {
-      var game = games[i];
-      if (q && game.title.toLowerCase().indexOf(q) === -1) continue;
-      if (who === "both" && game.owners.length !== 2) continue;
-      if ((who === "Shea" || who === "Grease") && game.owners.indexOf(who) === -1) continue;
-      if (which === "game" && game.isExpansion) continue;
-      if (which === "expansion" && !game.isExpansion) continue;
-      shown += 1;
-      var article = document.createElement("article");
-      article.className = "sheet";
-      var h2 = document.createElement("h2");
-      h2.textContent = game.title;
-      var meta = document.createElement("p");
-      meta.className = "hint";
-      var players = playersById[String(game.bggId)];
-      var playersText = "Players: Not verified";
-      if (players && (players.basis === "base" || players.basis === "open" || (players.label && players.max == null))) playersText = "Players: " + players.label;
-      else if (players && players.min != null && players.max != null) playersText = "Players: " + players.min + "–" + players.max;
-      if (players && players.expansion && playersText !== "Players: Not verified") playersText += " with the required base game, not a standalone count";
-      if (players && players.asOf && playersText !== "Players: Not verified") playersText += " (as of " + players.asOf + ")";
+    shown.forEach(function (game, index) {
+      var playersText = ShelfCards.sentence(game._players);
       var decisions = "";
       var related = saved.filter(function (row) { return row.bggId === game.bggId; });
       if (related.length) {
@@ -112,13 +133,10 @@
           return "Requested by " + row.requesterName + (choices ? " (" + choices + ")" : " (waiting on an owner)");
         }).join(" ");
       }
-      meta.textContent = ownersLabel(game.owners) + (game.isExpansion ? " · Expansion" : " · Game") + " · " + playersText + "." + decisions;
-      var links = document.createElement("p");
       var bgg = document.createElement("a");
       bgg.href = game.url;
       bgg.rel = "noopener noreferrer";
       bgg.textContent = "View on BGG";
-      links.appendChild(bgg);
       var mine = saved.find(function (row) { return you && row.bggId === game.bggId && row.requesterId === you.id; });
       var button = document.createElement("button");
       button.type = "button";
@@ -138,15 +156,25 @@
         button.textContent = "Request";
         button.addEventListener("click", function (event) { ask(Number(event.currentTarget.dataset.bgg)); });
       }
-      links.appendChild(document.createTextNode(" "));
-      links.appendChild(button);
-      article.appendChild(h2);
-      article.appendChild(meta);
-      article.appendChild(links);
-      frag.appendChild(article);
+      list.appendChild(ShelfCards.renderCard({
+        id: game.bggId,
+        title: game.title,
+        titleTag: "h2",
+        who: ownersLabel(game.owners) + (game.isExpansion ? " · Expansion" : " · Game"),
+        hint: ownersLabel(game.owners) + (game.isExpansion ? " · Expansion" : " · Game") + " · " + playersText + "." + decisions,
+        hintClass: "hint dt-card__record",
+        model: ShelfCards.model(game),
+        eager: index < 6,
+        actions: [bgg, button]
+      }));
+    });
+    if (!shown.length) {
+      var empty = document.createElement("p");
+      empty.className = "dt-empty";
+      empty.textContent = "No games match those filters.";
+      list.appendChild(empty);
     }
-    list.appendChild(frag);
-    count.textContent = shown + " shown." + (live ? "" : " Request buttons stay off until the board update is deployed.");
+    count.textContent = shown.length + " shown." + (live ? "" : " Request buttons stay off until the board update is deployed.");
   }
   var CODE_KEY = "retreat-edit-code";
   function authHeaders(extra) {
@@ -214,9 +242,17 @@
     if (!response.ok) throw new Error("missing");
     return response.json();
   }
-  var playersReady = fetch("/davenport-table/collections/players.json").then(function (response) { return response.ok ? response.json() : { games: {} }; }).then(function (data) {
-    playersById = data.games || {};
-  }).catch(function () {});
+  ShelfCards.wire({
+    plays: document.getElementById("plays-with"),
+    best: document.getElementById("best-with"),
+    time: document.getElementById("time-chips"),
+    weight: document.getElementById("weight-chips"),
+    sort: document.getElementById("shelf-sort"),
+    dir: document.getElementById("shelf-dir"),
+    min: document.getElementById("min-at-least"),
+    max: document.getElementById("max-at-most"),
+    theme: document.getElementById("theme-toggle")
+  }, cardState, show);
   api("/api/owned").then(readCatalog).catch(function () {
     return fetch("/davenport-table/collections/owned.json").then(readCatalog);
   })
@@ -228,7 +264,10 @@
       search.addEventListener("input", show);
       owner.addEventListener("change", show);
       kind.addEventListener("change", show);
-      return playersReady.then(function () { return loadBoard().then(show); });
+      return ShelfCards.loadSupport().then(function (support) {
+        ShelfCards.ingest(games, support.players, support.facts);
+        return loadBoard().then(show);
+      });
     })
     .catch(function () {
       count.textContent = "The owned snapshot did not load.";

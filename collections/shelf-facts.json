@@ -1,0 +1,887 @@
+{
+  "note": "Best-at, play time, weight, year, and box art are taken only from Shea's Game Shelf (github.com/Shea-Nelson/game-library, data snapshot November 10, 2026) when the BoardGameGeek id matches. Best-at is that shelf's copy of the BoardGameGeek community poll, not a publisher recommendation. Fields that were not in the snapshot are omitted. Player minimum and maximum are not stored here.",
+  "source": "https://github.com/Shea-Nelson/game-library/blob/main/data/games.json",
+  "games": {
+    "13": {
+      "best": "4",
+      "minPlay": 60,
+      "maxPlay": 120,
+      "weight": 2.28,
+      "year": 1995,
+      "image": "/davenport-table/media/games/covers/13.jpg"
+    },
+    "74": {
+      "best": "6-8",
+      "minPlay": 20,
+      "maxPlay": 30,
+      "weight": 1.15,
+      "year": 1999,
+      "image": "/davenport-table/media/games/covers/74.jpg"
+    },
+    "320": {
+      "best": "2",
+      "minPlay": 90,
+      "maxPlay": 90,
+      "weight": 2.05,
+      "year": 1948,
+      "image": "/davenport-table/media/games/covers/320.jpg"
+    },
+    "398": {
+      "best": "4",
+      "minPlay": 20,
+      "maxPlay": 30,
+      "weight": 1.27,
+      "year": 1994,
+      "image": "/davenport-table/media/games/covers/398.jpg"
+    },
+    "432": {
+      "best": "5-6",
+      "minPlay": 45,
+      "maxPlay": 45,
+      "weight": 1.19,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/432.jpg"
+    },
+    "822": {
+      "best": "2",
+      "minPlay": 30,
+      "maxPlay": 45,
+      "weight": 1.88,
+      "year": 2000,
+      "image": "/davenport-table/media/games/covers/822.jpg"
+    },
+    "1269": {
+      "best": "4",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.19,
+      "year": 1967,
+      "image": "/davenport-table/media/games/covers/1269.jpg"
+    },
+    "1515": {
+      "best": "2",
+      "minPlay": 90,
+      "maxPlay": 90,
+      "weight": 1.68,
+      "year": 1982,
+      "image": "/davenport-table/media/games/covers/1515.jpg"
+    },
+    "1927": {
+      "best": "4",
+      "minPlay": 60,
+      "maxPlay": 120,
+      "weight": 1.82,
+      "year": 2001,
+      "image": "/davenport-table/media/games/covers/1927.jpg"
+    },
+    "9209": {
+      "best": "4",
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 1.82,
+      "year": 2004,
+      "image": "/davenport-table/media/games/covers/9209.jpg"
+    },
+    "12942": {
+      "best": "4-5",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.13,
+      "year": 2004,
+      "image": "/davenport-table/media/games/covers/12942.jpg"
+    },
+    "16992": {
+      "best": "4, 6",
+      "minPlay": 15,
+      "maxPlay": 20,
+      "weight": 1.22,
+      "year": 2005,
+      "image": "/davenport-table/media/games/covers/16992.jpg"
+    },
+    "39463": {
+      "best": "5",
+      "minPlay": 60,
+      "maxPlay": 120,
+      "weight": 2.58,
+      "year": 2008,
+      "image": "/davenport-table/media/games/covers/39463.jpg"
+    },
+    "39856": {
+      "best": "5-6",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.19,
+      "year": 2008,
+      "image": "/davenport-table/media/games/covers/39856.jpg"
+    },
+    "43443": {
+      "best": "4",
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 1.66,
+      "year": 2009,
+      "image": "/davenport-table/media/games/covers/43443.jpg"
+    },
+    "46213": {
+      "best": "8",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.07,
+      "year": 2009,
+      "image": "/davenport-table/media/games/covers/46213.jpg"
+    },
+    "92415": {
+      "best": "5-6",
+      "minPlay": 15,
+      "maxPlay": 45,
+      "weight": 1.12,
+      "year": 2011,
+      "image": "/davenport-table/media/games/covers/92415.jpg"
+    },
+    "92828": {
+      "best": "6",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.16,
+      "year": 2011,
+      "image": "/davenport-table/media/games/covers/92828.jpg"
+    },
+    "128882": {
+      "best": "7-8",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.74,
+      "year": 2012,
+      "image": "/davenport-table/media/games/covers/128882.jpg"
+    },
+    "129556": {
+      "best": "4-6",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.02,
+      "year": 2012,
+      "image": "/davenport-table/media/games/covers/129556.jpg"
+    },
+    "147949": {
+      "best": "6-8",
+      "minPlay": 10,
+      "maxPlay": 10,
+      "weight": 1.38,
+      "year": 2014,
+      "image": "/davenport-table/media/games/covers/147949.jpg"
+    },
+    "150145": {
+      "best": "4-6",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.73,
+      "year": 2013,
+      "image": "/davenport-table/media/games/covers/150145.jpg"
+    },
+    "156129": {
+      "best": "6-8",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.59,
+      "year": 2014,
+      "image": "/davenport-table/media/games/covers/156129.jpg"
+    },
+    "156546": {
+      "best": "6, 8, 10",
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 1.09,
+      "year": 2015,
+      "image": "/davenport-table/media/games/covers/156546.jpg"
+    },
+    "160477": {
+      "best": "2",
+      "minPlay": 15,
+      "maxPlay": 20,
+      "weight": 1.66,
+      "year": 2014,
+      "image": "/davenport-table/media/games/covers/160477.jpg"
+    },
+    "163166": {
+      "best": "6-8",
+      "minPlay": 10,
+      "maxPlay": 10,
+      "weight": 1.4,
+      "year": 2015,
+      "image": "/davenport-table/media/games/covers/163166.jpg"
+    },
+    "163412": {
+      "best": "2",
+      "minPlay": 15,
+      "maxPlay": 30,
+      "weight": 1.6,
+      "year": 2014,
+      "image": "/davenport-table/media/games/covers/163412.jpg"
+    },
+    "171131": {
+      "best": "8",
+      "minPlay": 45,
+      "maxPlay": 60,
+      "weight": 2.21,
+      "year": 2016,
+      "image": "/davenport-table/media/games/covers/171131.jpg"
+    },
+    "178900": {
+      "best": "6, 8",
+      "minPlay": 15,
+      "maxPlay": 15,
+      "weight": 1.25,
+      "year": 2015,
+      "image": "/davenport-table/media/games/covers/178900.jpg"
+    },
+    "204135": {
+      "best": "4",
+      "minPlay": 15,
+      "maxPlay": 45,
+      "weight": 1.07,
+      "year": 2015,
+      "image": "/davenport-table/media/games/covers/204135.jpg"
+    },
+    "204583": {
+      "best": "2, 4",
+      "minPlay": 15,
+      "maxPlay": 25,
+      "weight": 1.24,
+      "year": 2016,
+      "image": "/davenport-table/media/games/covers/204583.jpg"
+    },
+    "207331": {
+      "best": "5-6",
+      "minPlay": 10,
+      "maxPlay": 25,
+      "weight": 1.0,
+      "year": 2016,
+      "image": "/davenport-table/media/games/covers/207331.jpg"
+    },
+    "217372": {
+      "best": "2, 4",
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 1.94,
+      "year": 2017,
+      "image": "/davenport-table/media/games/covers/217372.jpg"
+    },
+    "218178": {
+      "minPlay": 12,
+      "maxPlay": 45,
+      "weight": 2.0,
+      "year": 2017,
+      "image": "/davenport-table/media/games/covers/218178.jpg"
+    },
+    "218333": {
+      "best": "3-4",
+      "minPlay": 10,
+      "maxPlay": 20,
+      "weight": 1.1,
+      "year": 2017,
+      "image": "/davenport-table/media/games/covers/218333.jpg"
+    },
+    "218460": {
+      "weight": 1.0,
+      "year": 2015,
+      "image": "/davenport-table/media/games/covers/218460.jpg"
+    },
+    "225694": {
+      "best": "4, 6",
+      "minPlay": 15,
+      "maxPlay": 45,
+      "weight": 1.83,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/225694.jpg"
+    },
+    "227748": {
+      "minPlay": 20,
+      "weight": 1.74,
+      "year": 2017,
+      "image": "/davenport-table/media/games/covers/227748.jpg"
+    },
+    "232405": {
+      "best": "4",
+      "minPlay": 60,
+      "maxPlay": 90,
+      "weight": 2.85,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/232405.jpg"
+    },
+    "233994": {
+      "best": "5",
+      "minPlay": 20,
+      "maxPlay": 40,
+      "weight": 1.0,
+      "year": 2017,
+      "image": "/davenport-table/media/games/covers/233994.jpg"
+    },
+    "234190": {
+      "best": "4-5",
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 1.47,
+      "year": 2017,
+      "image": "/davenport-table/media/games/covers/234190.jpg"
+    },
+    "249816": {
+      "best": "4",
+      "minPlay": 15,
+      "maxPlay": 45,
+      "weight": 1.0,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/249816.jpg"
+    },
+    "254640": {
+      "best": "6-7",
+      "minPlay": 20,
+      "maxPlay": 60,
+      "weight": 1.03,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/254640.jpg"
+    },
+    "255293": {
+      "best": "6-8",
+      "minPlay": 10,
+      "maxPlay": 10,
+      "weight": 1.5,
+      "year": 2019,
+      "image": "/davenport-table/media/games/covers/255293.jpg"
+    },
+    "256226": {
+      "best": "3",
+      "minPlay": 30,
+      "maxPlay": 45,
+      "weight": 2.01,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/256226.jpg"
+    },
+    "260605": {
+      "best": "5-6",
+      "minPlay": 30,
+      "maxPlay": 45,
+      "weight": 1.51,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/260605.jpg"
+    },
+    "260942": {
+      "best": "5-7",
+      "minPlay": 120,
+      "maxPlay": 120,
+      "weight": 1.2,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/260942.jpg"
+    },
+    "262547": {
+      "best": "6-8",
+      "weight": 1.07,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/262547.jpg"
+    },
+    "271601": {
+      "best": "8-11",
+      "minPlay": 45,
+      "maxPlay": 90,
+      "weight": 2.17,
+      "year": 2022,
+      "image": "/davenport-table/media/games/covers/271601.jpg"
+    },
+    "274533": {
+      "best": "4-6",
+      "minPlay": 15,
+      "maxPlay": 15,
+      "weight": 1.1,
+      "year": 2019,
+      "image": "/davenport-table/media/games/covers/274533.jpg"
+    },
+    "277154": {
+      "best": "6-8",
+      "minPlay": 5,
+      "maxPlay": 15,
+      "weight": 1.0,
+      "year": 2019,
+      "image": "/davenport-table/media/games/covers/277154.jpg"
+    },
+    "277458": {
+      "best": "3",
+      "minPlay": 10,
+      "maxPlay": 20,
+      "weight": 1.03,
+      "year": 2018,
+      "image": "/davenport-table/media/games/covers/277458.jpg"
+    },
+    "284083": {
+      "best": "4",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.97,
+      "year": 2019,
+      "image": "/davenport-table/media/games/covers/284083.jpg"
+    },
+    "287821": {
+      "best": "6",
+      "minPlay": 20,
+      "maxPlay": 45,
+      "weight": 1.33,
+      "year": 2019,
+      "image": "/davenport-table/media/games/covers/287821.jpg"
+    },
+    "299252": {
+      "best": "3-4",
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 1.69,
+      "year": 2020,
+      "image": "/davenport-table/media/games/covers/299252.jpg"
+    },
+    "310789": {
+      "best": "2",
+      "minPlay": 20,
+      "maxPlay": 30,
+      "weight": 1.07,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/310789.jpg"
+    },
+    "312484": {
+      "best": "3",
+      "minPlay": 30,
+      "maxPlay": 120,
+      "weight": 2.93,
+      "year": 2020,
+      "image": "/davenport-table/media/games/covers/312484.jpg"
+    },
+    "312786": {
+      "best": "6, 8",
+      "minPlay": 15,
+      "maxPlay": 15,
+      "weight": 1.11,
+      "year": 2020,
+      "image": "/davenport-table/media/games/covers/312786.jpg"
+    },
+    "314421": {
+      "best": "3",
+      "minPlay": 5,
+      "maxPlay": 15,
+      "weight": 1.0,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/314421.jpg"
+    },
+    "321539": {
+      "best": "2",
+      "minPlay": 10,
+      "maxPlay": 10,
+      "weight": 1.0,
+      "year": 2020,
+      "image": "/davenport-table/media/games/covers/321539.jpg"
+    },
+    "329230": {
+      "best": "4",
+      "minPlay": 15,
+      "maxPlay": 25,
+      "weight": 1.0,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/329230.jpg"
+    },
+    "330302": {
+      "minPlay": 20,
+      "maxPlay": 30,
+      "weight": 1.0,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/330302.jpg"
+    },
+    "331685": {
+      "best": "5",
+      "minPlay": 20,
+      "maxPlay": 45,
+      "weight": 1.89,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/331685.jpg"
+    },
+    "336755": {
+      "best": "4-5",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.43,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/336755.jpg"
+    },
+    "339031": {
+      "best": "3, 5",
+      "minPlay": 50,
+      "maxPlay": 50,
+      "weight": 2.39,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/339031.jpg"
+    },
+    "340834": {
+      "best": "4",
+      "minPlay": 20,
+      "maxPlay": 45,
+      "weight": 1.94,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/340834.jpg"
+    },
+    "342070": {
+      "best": "4",
+      "minPlay": 45,
+      "maxPlay": 75,
+      "weight": 1.95,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/342070.jpg"
+    },
+    "345266": {
+      "best": "1-2, 4",
+      "minPlay": 60,
+      "maxPlay": 120,
+      "weight": 2.65,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/345266.jpg"
+    },
+    "347029": {
+      "best": "2",
+      "minPlay": 10,
+      "maxPlay": 15,
+      "weight": 1.0,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/347029.jpg"
+    },
+    "348096": {
+      "best": "4-6",
+      "minPlay": 10,
+      "maxPlay": 10,
+      "weight": 1.09,
+      "year": 2022,
+      "image": "/davenport-table/media/games/covers/348096.jpg"
+    },
+    "352997": {
+      "best": "4",
+      "minPlay": 15,
+      "maxPlay": 30,
+      "weight": 1.0,
+      "year": 2021,
+      "image": "/davenport-table/media/games/covers/352997.jpg"
+    },
+    "355483": {
+      "best": "4-5",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.6,
+      "year": 2022,
+      "image": "/davenport-table/media/games/covers/355483.jpg"
+    },
+    "359502": {
+      "best": "4",
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 2.26,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/359502.jpg"
+    },
+    "360484": {
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 2.0,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/360484.jpg"
+    },
+    "361208": {
+      "best": "3",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 2.0,
+      "year": 2022,
+      "image": "/davenport-table/media/games/covers/361208.jpg"
+    },
+    "364266": {
+      "best": "2",
+      "minPlay": 15,
+      "maxPlay": 25,
+      "weight": 1.11,
+      "year": 2022,
+      "image": "/davenport-table/media/games/covers/364266.jpg"
+    },
+    "366495": {
+      "best": "2",
+      "minPlay": 45,
+      "maxPlay": 60,
+      "weight": 2.74,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/366495.jpg"
+    },
+    "372973": {
+      "weight": 1.0,
+      "year": 2022,
+      "image": "/davenport-table/media/games/covers/372973.jpg"
+    },
+    "374173": {
+      "best": "2",
+      "minPlay": 30,
+      "maxPlay": 90,
+      "weight": 2.05,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/374173.jpg"
+    },
+    "375651": {
+      "best": "5",
+      "minPlay": 15,
+      "maxPlay": 15,
+      "weight": 1.06,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/375651.jpg"
+    },
+    "380439": {
+      "best": "3",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.73,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/380439.jpg"
+    },
+    "386831": {
+      "best": "3",
+      "weight": 1.0,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/386831.jpg"
+    },
+    "392200": {
+      "minPlay": 30,
+      "maxPlay": 60,
+      "weight": 2.0,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/392200.jpg"
+    },
+    "392694": {
+      "best": "4",
+      "minPlay": 20,
+      "maxPlay": 30,
+      "weight": 1.25,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/392694.jpg"
+    },
+    "394889": {
+      "best": "4-6",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.1,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/394889.jpg"
+    },
+    "396607": {
+      "best": "5",
+      "minPlay": 45,
+      "maxPlay": 45,
+      "weight": 1.71,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/396607.jpg"
+    },
+    "402111": {
+      "best": "3",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 2.05,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/402111.jpg"
+    },
+    "402245": {
+      "best": "6",
+      "minPlay": 45,
+      "maxPlay": 45,
+      "weight": 1.25,
+      "year": 2023,
+      "image": "/davenport-table/media/games/covers/402245.jpg"
+    },
+    "407297": {
+      "best": "2",
+      "minPlay": 25,
+      "maxPlay": 45,
+      "weight": 1.48,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/407297.jpg"
+    },
+    "409928": {
+      "minPlay": 25,
+      "maxPlay": 60,
+      "weight": 1.0,
+      "year": 2022,
+      "image": "/davenport-table/media/games/covers/409928.jpg"
+    },
+    "412230": {
+      "best": "5-6",
+      "minPlay": 45,
+      "maxPlay": 45,
+      "weight": 1.5,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/412230.jpg"
+    },
+    "413085": {
+      "best": "6",
+      "minPlay": 20,
+      "maxPlay": 40,
+      "weight": 1.5,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/413085.jpg"
+    },
+    "416850": {
+      "best": "4-5",
+      "minPlay": 15,
+      "maxPlay": 20,
+      "weight": 1.33,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/416850.jpg"
+    },
+    "420087": {
+      "best": "5-6",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.04,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/420087.jpg"
+    },
+    "422159": {
+      "best": "6-7",
+      "minPlay": 15,
+      "maxPlay": 15,
+      "weight": 1.5,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/422159.jpg"
+    },
+    "423850": {
+      "best": "4-5",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.0,
+      "year": 2024,
+      "image": "/davenport-table/media/games/covers/423850.jpg"
+    },
+    "426547": {
+      "best": "2",
+      "weight": 1.0,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/426547.jpg"
+    },
+    "434172": {
+      "best": "5-6",
+      "minPlay": 15,
+      "maxPlay": 25,
+      "weight": 1.28,
+      "year": 2026,
+      "image": "/davenport-table/media/games/covers/434172.jpg"
+    },
+    "434654": {
+      "best": "2",
+      "minPlay": 15,
+      "maxPlay": 15,
+      "weight": 1.48,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/434654.jpg"
+    },
+    "434906": {
+      "best": "2",
+      "minPlay": 15,
+      "maxPlay": 15,
+      "weight": 2.12,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/434906.jpg"
+    },
+    "438119": {
+      "best": "3-4",
+      "minPlay": 20,
+      "maxPlay": 30,
+      "weight": 1.5,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/438119.jpg"
+    },
+    "438512": {
+      "best": "4",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 2.0,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/438512.jpg"
+    },
+    "439305": {
+      "best": "2",
+      "minPlay": 30,
+      "maxPlay": 45,
+      "weight": 1.63,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/439305.jpg"
+    },
+    "440509": {
+      "best": "3",
+      "minPlay": 30,
+      "maxPlay": 45,
+      "weight": 2.25,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/440509.jpg"
+    },
+    "441706": {
+      "best": "3-5",
+      "minPlay": 45,
+      "maxPlay": 45,
+      "weight": 2.11,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/441706.jpg"
+    },
+    "446497": {
+      "best": "5-6",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.22,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/446497.jpg"
+    },
+    "449185": {
+      "best": "3",
+      "minPlay": 15,
+      "maxPlay": 30,
+      "weight": 1.67,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/449185.jpg"
+    },
+    "450935": {
+      "minPlay": 10,
+      "maxPlay": 20,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/450935.jpg"
+    },
+    "454103": {
+      "best": "5-6",
+      "minPlay": 30,
+      "maxPlay": 30,
+      "weight": 1.18,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/454103.jpg"
+    },
+    "463441": {
+      "best": "4-6",
+      "minPlay": 20,
+      "maxPlay": 20,
+      "weight": 1.04,
+      "year": 2026,
+      "image": "/davenport-table/media/games/covers/463441.jpg"
+    },
+    "468272": {
+      "minPlay": 30,
+      "maxPlay": 30,
+      "year": 2025,
+      "image": "/davenport-table/media/games/covers/468272.jpg"
+    },
+    "468425": {
+      "best": "4, 6, 8",
+      "minPlay": 15,
+      "maxPlay": 25,
+      "weight": 1.0,
+      "year": 2026,
+      "image": "/davenport-table/media/games/covers/468425.jpg"
+    },
+    "472022": {
+      "best": "6",
+      "minPlay": 25,
+      "maxPlay": 25,
+      "weight": 2.0,
+      "year": 2026,
+      "image": "/davenport-table/media/games/covers/472022.jpg"
+    }
+  }
+}
