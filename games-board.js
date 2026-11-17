@@ -289,6 +289,8 @@
     }).catch(function () {
       var total = host.querySelector("#brought-total");
       if (total) total.textContent = "The shelf count did not load.";
+      var status = host.querySelector("#requested-status");
+      if (status && status.textContent === "Loading requests.") status.textContent = "Requests did not load.";
     });
   }
   function boot() {

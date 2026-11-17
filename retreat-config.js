@@ -5,6 +5,17 @@ window.RETREAT_BOARD = "ready";
 /* Distance notes and the requests link. Re-applied after the page hydrates. */
 (function () {
   var METHOD = "Driving miles from the published resort map marker (28.312206, -81.659872), not from a house street. Measured November 7, 2026. Most addresses were located with the US Census geocoder, then routed with the OSRM driving profile. Chick-fil-A, Moe's, and Carrabba's use coordinates published on their own location pages because Census matched a different street or none.";
+  var imageSize = {
+    "chick-fil-a-champions-crossing.jpg": [400, 400],
+    "culvers-logo.svg": [81, 38],
+    "five-guys-logo.jpg": [131, 131],
+    "huey-magoos-logo.jpg": [1380, 559],
+    "moes-logo.png": [2048, 2048],
+    "outback-logo.svg": [96, 36],
+    "longhorn-favicon.png": [32, 32],
+    "carrabbas-logo.svg": [862, 174],
+    "texas-roadhouse-brand.jpg": [1200, 630]
+  };
   var places = [
     { slug: "chick-fil-a", miles: 3.34, label: "3.3 driving miles from the resort marker", note: "Coordinates from the Chick-fil-A Champions Crossing page, then OSRM. Closed Sunday." },
     { slug: "moes", miles: 4.09, label: "4.1 driving miles from the resort marker", note: "Coordinates 28.3595057, -81.6780898 on the Moe's Four Corners page for 890 US Hwy 27, Clermont, then the same OSRM route." },
@@ -37,7 +48,7 @@ window.RETREAT_BOARD = "ready";
   };
 
   function nav() {
-    var lists = document.querySelectorAll("nav.desk-nav ul");
+    var lists = document.querySelectorAll("nav.desk-nav ul, ul.mobile-links");
     for (var i = 0; i < lists.length; i += 1) {
       if (lists[i].querySelector('a[href="/davenport-table/requests/"]')) continue;
       var li = document.createElement("li");
@@ -63,6 +74,13 @@ window.RETREAT_BOARD = "ready";
       var img = document.createElement("img");
       img.src = extra.image;
       img.alt = extra.alt;
+      img.decoding = "async";
+      var file = extra.image.split("/").pop();
+      var dim = imageSize[file];
+      if (dim) {
+        img.width = dim[0];
+        img.height = dim[1];
+      }
       if (extra.logo) img.className = "brand-mark";
       var cap = document.createElement("figcaption");
       cap.textContent = extra.caption;
@@ -205,6 +223,14 @@ window.RETREAT_BOARD = "ready";
     gamesLink();
     gamesBoard();
   }
-  apply();
-  new MutationObserver(apply).observe(document.documentElement, { childList: true, subtree: true });
+  function boot() {
+    apply();
+    if (boot.watching) return;
+    boot.watching = true;
+    new MutationObserver(apply).observe(document.documentElement, { childList: true, subtree: true });
+  }
+  /* Next's hydration can still be in flight when load fires on a light page. Wait until it has had a turn at the server HTML. */
+  function schedule() { setTimeout(boot, 200); }
+  if (document.readyState === "complete") schedule();
+  else window.addEventListener("load", schedule, { once: true });
 })();
