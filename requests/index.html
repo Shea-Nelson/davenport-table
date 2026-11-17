@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Owned games · The Davenport Table</title>
+<meta name="description" content="Public BoardGameGeek collections owned by Shea and Grease. Asking for a game is separate from adding it to the shelf."/>
 <meta name="robots" content="noindex, nofollow"/>
 <link rel="stylesheet" href="/davenport-table/_next/static/chunks/3f92k8hgoqp7a.css"/>
 <link rel="stylesheet" href="/davenport-table/shelf-cards.css"/>
@@ -23,14 +24,28 @@
 <li><a href="/davenport-table/eats/">Eats</a></li>
 <li><a href="/davenport-table/practical/">Fine print</a></li>
 </ul></nav>
+<button class="btn btn-ghost mobile-only" type="button" id="open-site-menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="site-menu">Menu</button>
 </div>
 </header>
+<dialog class="dialog-content menu-panel" id="site-menu" aria-labelledby="site-menu-title" tabindex="-1" closedby="any">
+<h2 id="site-menu-title" class="dialog-title">Menu</h2>
+<p class="dialog-desc">Pages on this board.</p>
+<nav aria-label="Primary mobile"><ul class="mobile-links" style="display:grid">
+<li><a href="/davenport-table/">House</a></li>
+<li><a href="/davenport-table/people/">Peeps</a></li>
+<li><a href="/davenport-table/rooms/">Rooms</a></li>
+<li><a href="/davenport-table/games/">Games</a></li>
+<li><a href="/davenport-table/requests/" aria-current="page">Requests</a></li>
+<li><a href="/davenport-table/eats/">Eats</a></li>
+<li><a href="/davenport-table/practical/">Fine print</a></li>
+</ul></nav>
+</dialog>
 <main id="content">
 <div class="wrap section stack">
 <p class="kicker">Public collections</p>
 <h1>Games Shea and Grease own</h1>
 <p class="lede">This list is a snapshot of two public BoardGameGeek owned pages. It is not the shelf. Adding a game you are bringing still happens on the Games page after you sign in with your edit code.</p>
-<p class="hint" id="request-status" role="note">Request saving is not live. The board update that would store a request has not been deployed, so nothing on this page is saved.</p>
+<p class="hint" id="request-status" role="status">Request saving is not live. The board update that would store a request has not been deployed, so nothing on this page is saved.</p>
 <div class="dt-toolbar">
 <div class="dt-toolbar__row">
 <label class="dt-search" for="owned-search">Search titles
@@ -75,6 +90,38 @@
 </div>
 </main>
 <footer class="site-footer"><div class="wrap"><p>The street address of the house is not published.</p></div></footer>
+<script>
+(function () {
+  var button = document.getElementById("open-site-menu");
+  var dialog = document.getElementById("site-menu");
+  if (!button || !dialog || !dialog.showModal) return;
+  button.addEventListener("click", function () {
+    dialog.showModal();
+    dialog.focus();
+    button.setAttribute("aria-expanded", "true");
+  });
+  dialog.addEventListener("close", function () {
+    button.setAttribute("aria-expanded", "false");
+    setTimeout(function () {
+      if (button.getClientRects().length) button.focus();
+    }, 0);
+  });
+  dialog.addEventListener("toggle", function () {
+    button.setAttribute("aria-expanded", dialog.open ? "true" : "false");
+  });
+  if (!("closedBy" in HTMLDialogElement.prototype)) {
+    var pressedOutside = false;
+    function outside(event) {
+      var box = dialog.getBoundingClientRect();
+      return event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom;
+    }
+    dialog.addEventListener("pointerdown", function (event) { pressedOutside = outside(event); });
+    dialog.addEventListener("pointerup", function (event) {
+      if (pressedOutside && outside(event)) dialog.close();
+    });
+  }
+})();
+</script>
 <script src="/davenport-table/retreat-config.js"></script>
 <script src="/davenport-table/shelf-cards.js"></script>
 <script>

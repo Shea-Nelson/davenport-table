@@ -152,7 +152,7 @@
       if (state.sort === "weight") return itemModel.weight == null ? null : itemModel.weight;
       return name(item);
     }
-    return list.slice().sort(function (a, b) {
+    return list.toSorted(function (a, b) {
       var left = key(a);
       var right = key(b);
       if (left == null && right == null) return name(a).localeCompare(name(b));
