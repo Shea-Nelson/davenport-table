@@ -1,11 +1,12 @@
 {
   "metadata": {
     "source": "https://boardgamegeek.com/collection/user/Scorpy311?own=1&subtype=boardgame&ff=1",
-    "displayedTotal": 113,
+    "displayedTotal": 114,
     "pageCoverage": [
       "1–113 of 113 (Page 1)"
     ],
-    "count": 113
+    "count": 114,
+    "note": "Agricola: Special Edition (BGG 440147) was added Nov 18, 2026 from the received box; it was not on the Nov 7, 2026 public BGG collection scrape and is not yet confirmed on the live BGG collection."
   },
   "items": [
     {
@@ -684,6 +685,12 @@
       "title": "Western Legends (English second edition)",
       "url": "https://boardgamegeek.com/boardgame/232405/western-legends",
       "id": "232405",
+      "owner": "Scorpy311"
+    },
+    {
+      "title": "Agricola: Special Edition",
+      "url": "https://boardgamegeek.com/boardgame/440147/agricola-special-edition",
+      "id": "440147",
       "owner": "Scorpy311"
     }
   ]

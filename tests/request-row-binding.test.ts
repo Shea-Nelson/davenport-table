@@ -7,7 +7,7 @@ import test from "node:test";
 
 const pageUrl = process.env.REQUESTS_PAGE_URL || "";
 
-test("clicking a rendered row requests that row, including the first of 483", async () => {
+test("clicking a rendered row requests that row, including the first of 484", async () => {
   const sitePort = 8877;
   const root = mkdtempSync(path.join(tmpdir(), "row-site-"));
   symlinkSync(process.cwd(), path.join(root, "davenport-table"));
@@ -21,7 +21,7 @@ test("clicking a rendered row requests that row, including the first of 483", as
     await page.send("Page.addScriptToEvaluateOnNewDocument", { source: mockFetch });
     const target = pageUrl || `http://127.0.0.1:${sitePort}/davenport-table/requests/?rows=1`;
     await page.send("Page.navigate", { url: target });
-    await waitFor(page, "document.querySelectorAll('#owned-list article').length===483 && document.querySelector('#owned-list button').textContent==='Request' && !document.querySelector('#owned-list button').disabled");
+    await waitFor(page, "document.querySelectorAll('#owned-list article').length===484 && document.querySelector('#owned-list button').textContent==='Request' && !document.querySelector('#owned-list button').disabled");
     const first = await page.eval("document.querySelector('#owned-list h2').textContent");
     assert.equal(first, "12 Days");
     await page.eval("document.querySelector('#owned-list button').click()");
