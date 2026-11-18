@@ -48,8 +48,8 @@ test("owned catalog is public and keeps Excalibur distinct from Avalon", async (
       games: { bggId: number; title: string; url: string; owners: string[] }[];
     };
     assert.equal(response.status, 200);
-    assert.equal(body.rawRows, 501);
-    assert.equal(body.uniqueGames, 483);
+    assert.equal(body.rawRows, 502);
+    assert.equal(body.uniqueGames, 484);
     const excalibur = body.games.find((game) => game.bggId === EXCALIBUR);
     const avalon = body.games.find((game) => game.bggId === AVALON);
     assert.equal(excalibur?.title, "Excalibur (English deluxe edition)");

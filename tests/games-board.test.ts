@@ -71,7 +71,7 @@ test("requests page labels dataset counts, expansions, and open-ended Hot Streak
     const page = await openPage(9262);
     await page.send("Page.addScriptToEvaluateOnNewDocument", { source: mockFetch });
     await page.send("Page.navigate", { url: `http://127.0.0.1:${sitePort}/davenport-table/requests/?players=1` });
-    await waitFor(page, "document.querySelectorAll('#owned-list article').length===483");
+    await waitFor(page, "document.querySelectorAll('#owned-list article').length===484");
     const labels = await page.eval(`(() => {
       const want = ["Hot Streak (English edition)", "Catan: 5-6 Player Expansion", "Excalibur (English deluxe edition)", "The Settlers of Catan", "Camel Up (Second Edition) (Lookout Games English edition)", "One Night Ultimate Werewolf: Daybreak (English fourth edition)"];
       const out = {};
@@ -96,7 +96,7 @@ test("requests page labels dataset counts, expansions, and open-ended Hot Streak
     assert.match(credit, /CC BY-SA 3\.0/);
     assert.match(credit, /99/);
     await page.eval("document.querySelector('#plays-with button[data-v=\"4\"]').click()");
-    await waitFor(page, "document.querySelectorAll('#owned-list article').length < 483");
+    await waitFor(page, "document.querySelectorAll('#owned-list article').length < 484");
     const filtered = await page.eval(`({
       buried: [...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.includes('Buried Secrets')),
       hot: [...document.querySelectorAll('#owned-list h2')].some((heading) => heading.textContent.startsWith('Hot Streak')),

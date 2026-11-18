@@ -1,8 +1,8 @@
 {
   "note": "Edition rows were checked against a publisher or product page and are kept ahead of any older dataset. Dataset rows are exact BoardGameGeek id matches from public snapshots; the year is a snapshot label, not a promise the count is current. Expansion rows need the base game. Hot Streak is open-ended, 2–9+, and has no numeric maximum. Counts of 99 and unresolved conflicts were not imported. Durations are not included.",
   "coverage": {
-    "catalog": 483,
-    "withCount": 348,
+    "catalog": 484,
+    "withCount": 349,
     "unknown": 135
   },
   "games": {
@@ -2747,6 +2747,13 @@
       "max": 2,
       "source": "https://cardboardalchemy.com/flamecraft-duals/",
       "basis": "edition",
+      "license": "official"
+    },
+    "440147": {
+      "min": 1,
+      "max": 6,
+      "basis": "edition",
+      "source": "https://gamefound.com/en/projects/awaken-realms/agricola-special-edition",
       "license": "official"
     },
     "441706": {
