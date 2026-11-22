@@ -143,8 +143,16 @@ window.RETREAT_BOARD = "ready";
       places.forEach(function (place) { grid.appendChild(by[place.slug]); });
     }
     var lede = document.querySelector("main .lede");
-    var ledeText = "Sorted by driving miles from the resort map marker. " + METHOD;
+    var ledeText = "Sorted by driving miles from the resort map marker.";
     if (lede && lede.textContent !== ledeText) lede.textContent = ledeText;
+    var method = document.getElementById("miles-method");
+    if (lede && !method) {
+      method = document.createElement("p");
+      method.id = "miles-method";
+      method.className = "hint distance-method";
+      lede.insertAdjacentElement("afterend", method);
+    }
+    if (method && method.textContent !== METHOD) method.textContent = METHOD;
     var host = document.getElementById("unrouted-places");
     if (!host) {
       host = document.createElement("section");
