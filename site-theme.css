@@ -1,0 +1,92 @@
+/* Lanai Daylight — preview theme for redesign/look-and-motion.
+   Florida morning: sand paper, pool-water teal, a light hero so the
+   house photographs and the type share one sunlit room. */
+:root {
+  --paper:#f4efe6;
+  --paper-2:#e7ddd0;
+  --ink:#17302b;
+  --ink-soft:#3d534e;
+  --line:#d5cbbd;
+  --cream:#fbf7f0;
+  --hero:#e7f3ef;
+  --teal:#0c5f56;
+  --teal-deep:#08463f;
+  --gold:#6a4a14;
+  --gold-bg:#f3e4c4;
+  --rose:#7a2148;
+  --rose-bg:#f8e6ee;
+  --listing:#0c5f56;
+  --listing-bg:#d8f0ea;
+  --danger:#8a1c36;
+  --white:#fffcf7;
+  --focus:#0c5f56;
+  --shadow:0 14px 32px #17302b14;
+}
+
+.hero {
+  background: var(--hero) !important;
+  color: var(--ink) !important;
+}
+.hero h1,
+.hero .deck,
+.hero p,
+.hero .tickets,
+.hero .ticket,
+.hero strong {
+  color: var(--ink);
+}
+.hero h1 { color: var(--ink) !important; }
+/* Kicker is 12.5px small text. Pool teal #0c5f56 is 6.63:1 on the
+   light hero; deepen one step so it clears AAA 7:1. */
+.hero .kicker { color: #0a554d !important; }
+.hero .deck { color: var(--ink-soft) !important; }
+.hero a { color: var(--teal-deep) !important; }
+.hero .ticket,
+.hero .tickets {
+  border-color: var(--line) !important;
+}
+
+/* Ticket labels and times were baked as cream #d9cbb8 for the old navy
+   hero. On #e7f3ef that is 1.4:1. Use a caption ink in the ink-soft
+   family, dark enough for 11.5px uppercase letterspacing (9.14:1). */
+.hero .ticket span,
+.hero .meta-label {
+  color: #2f443f !important;
+}
+
+.btn,
+button.btn,
+.btn-ghost {
+  border-radius: 999px;
+}
+.sheet,
+.dt-card,
+article.sheet,
+.food-photo,
+.card-grid .sheet {
+  border-radius: 20px;
+}
+.sheet,
+.dt-card,
+article.sheet {
+  box-shadow: var(--shadow);
+}
+
+/* Keep the long mileage method secondary so restaurant cards come sooner. */
+.distance-method,
+p.hint.distance-method {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  max-width: 46rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+  :focus-visible { outline: 3px solid CanvasText; }
+  .hero { forced-color-adjust: none; }
+  .btn, .sheet { border: 1px solid CanvasText; }
+}

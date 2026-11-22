@@ -1,0 +1,71 @@
+/* Purposeful motion for Lanai Daylight. Opt in. Stay on the compositor. */
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+
+  .sheet,
+  .dt-card,
+  article.sheet {
+    animation: card-in 0.4s ease-out;
+  }
+
+  .hero-copy {
+    animation: hero-in 0.45s ease-out;
+  }
+
+  .btn:active,
+  button.btn:active {
+    transform: scale(0.98);
+  }
+
+  /* Menu and other dialogs already use <dialog>. Fade and a slight scale. */
+  .dialog-content,
+  .menu-panel {
+    opacity: 0;
+    transition-property: opacity, transform, display, overlay;
+    transition-duration: 0.22s;
+    transition-timing-function: ease-out;
+    transition-behavior: allow-discrete;
+  }
+  .dialog-content[open],
+  .menu-panel[open] {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  @starting-style {
+    .dialog-content[open],
+    .menu-panel[open] {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+    .dialog-content[open]::backdrop,
+    .menu-panel[open]::backdrop {
+      opacity: 0;
+    }
+  }
+  .menu-panel::backdrop,
+  .dialog-content::backdrop {
+    opacity: 1;
+    transition-property: opacity, display, overlay;
+    transition-duration: 0.22s;
+    transition-behavior: allow-discrete;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet,
+  .dt-card,
+  article.sheet,
+  .hero-copy {
+    animation: none;
+  }
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
